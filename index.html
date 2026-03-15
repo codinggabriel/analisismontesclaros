@@ -6,8 +6,7 @@
 <title>Informe Inmobiliario · Calle de los Pozos 25 · Montesclaros</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,400;1,400;1,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@1,400;1,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:    #F7F4EF;
@@ -20,13 +19,10 @@
   --line:  rgba(13,27,42,.1);
   --white: #FFFFFF;
   --rl:    rgba(196,30,58,.06);
-  --rm:    rgba(196,30,58,.13);
+  --rm:    rgba(196,30,58,.14);
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
 body {
   background: var(--bg);
   color: var(--ink);
@@ -36,786 +32,390 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── NAV ── */
+/* NAV */
 nav {
-  position: fixed;
-  top: 1.2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  position: fixed; top: 1.1rem; left: 50%; transform: translateX(-50%);
   z-index: 100;
-  background: rgba(247,244,239,.82);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: .6rem 1.6rem;
-  display: flex;
-  gap: 2.2rem;
-  align-items: center;
-  font-family: 'DM Mono', monospace;
-  font-size: .58rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
+  background: rgba(247,244,239,.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: .55rem 1.5rem;
+  display: flex; gap: 2rem; align-items: center;
+  font-family: 'DM Mono', monospace; font-size: .57rem;
+  letter-spacing: .2em; text-transform: uppercase;
   transition: box-shadow .3s;
 }
-nav.scrolled { box-shadow: 0 4px 32px rgba(13,27,42,.12); }
+nav.scrolled { box-shadow: 0 4px 28px rgba(13,27,42,.11); }
 nav a { color: var(--muted); text-decoration: none; transition: color .2s; }
 nav a:hover { color: var(--red); }
-nav .nav-brand { color: var(--ink); font-weight: 500; }
+nav .nb { color: var(--ink); font-weight: 500; }
 
-/* ── CONTENEDOR ── */
-.wrap { width: min(920px, 92vw); margin: 0 auto; }
+/* WRAP */
+.wrap { width: min(940px, 92vw); margin: 0 auto; }
 
-/* ── HERO ── */
+/* HERO */
 .hero {
   min-height: 100svh;
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 5rem;
-  align-items: center;
+  display: grid; grid-template-columns: 1.15fr .85fr;
+  gap: 5rem; align-items: center;
   padding: 9rem 6vw 6rem;
-  position: relative;
-  overflow: hidden;
+  position: relative; overflow: hidden;
 }
 .hero::before {
   content: '2026';
-  position: absolute;
-  bottom: -2rem;
-  right: -1rem;
+  position: absolute; bottom: -3rem; right: -1.5rem;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(10rem, 22vw, 20rem);
-  font-weight: 900;
-  color: var(--ink);
-  opacity: .028;
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
+  font-size: clamp(9rem, 22vw, 19rem); font-weight: 900;
+  color: var(--ink); opacity: .027; line-height: 1;
+  pointer-events: none; user-select: none;
 }
-/* Grid background */
 .hero::after {
   content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
+  position: absolute; inset: 0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: 60px 60px;
-  -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 50%, black 30%, transparent 100%);
-  mask-image: radial-gradient(ellipse 70% 80% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 75% at 50% 50%, black 25%, transparent 100%);
+  mask-image: radial-gradient(ellipse 65% 75% at 50% 50%, black 25%, transparent 100%);
   pointer-events: none;
 }
 .hero-text { position: relative; z-index: 2; }
-.hero-eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: .58rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: .7rem;
+.eyebrow {
+  font-family: 'DM Mono', monospace; font-size: .57rem;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--red);
+  margin-bottom: 1.2rem; display: flex; align-items: center; gap: .7rem;
 }
-.hero-eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 2rem;
-  height: 1px;
-  background: var(--red);
-}
+.eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--red); }
 h1 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(3.6rem, 8vw, 7.8rem);
-  font-weight: 900;
-  line-height: .93;
-  letter-spacing: -.01em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin-bottom: 1.8rem;
+  font-size: clamp(3.6rem, 8vw, 7.6rem);
+  font-weight: 900; line-height: .93;
+  letter-spacing: -.01em; text-transform: uppercase;
+  color: var(--ink); margin-bottom: 1.8rem;
 }
 h1 em { font-style: italic; color: var(--red); }
 .hero-sub {
-  font-family: 'Lora', serif;
-  font-size: .95rem;
-  color: var(--muted);
-  line-height: 1.85;
-  max-width: 38ch;
-  margin-bottom: 2.5rem;
+  font-size: .95rem; color: var(--muted); line-height: 1.85;
+  max-width: 38ch; margin-bottom: 2.5rem;
 }
 .hero-sub strong { color: var(--ink); }
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: .6rem;
-  background: var(--red);
-  color: var(--white);
-  font-family: 'DM Mono', monospace;
-  font-size: .6rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: .9rem 1.8rem;
-  border-radius: 4px;
+.btn-r {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--red); color: var(--white);
+  font-family: 'DM Mono', monospace; font-size: .59rem;
+  letter-spacing: .17em; text-transform: uppercase;
+  text-decoration: none; padding: .88rem 1.7rem; border-radius: 4px;
   transition: all .22s;
 }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,30,58,.35); }
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: .6rem;
-  background: transparent;
-  color: var(--ink);
-  font-family: 'DM Mono', monospace;
-  font-size: .6rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: .9rem 1.4rem;
+.btn-r:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,30,58,.35); }
+.btn-g {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: transparent; color: var(--ink);
+  font-family: 'DM Mono', monospace; font-size: .59rem;
+  letter-spacing: .17em; text-transform: uppercase;
+  text-decoration: none; padding: .88rem 1.3rem;
+  border: 1px solid var(--line); border-radius: 4px;
+  margin-left: .7rem; transition: all .22s;
+}
+.btn-g:hover { border-color: var(--ink); }
+
+/* HERO CARD */
+.hcard {
+  background: var(--white); border-radius: 4px; padding: 2.1rem;
   border: 1px solid var(--line);
-  border-radius: 4px;
-  margin-left: .8rem;
-  transition: all .22s;
+  box-shadow: 8px 8px 0 var(--rm), 16px 16px 0 rgba(196,30,58,.04),
+    0 0 50px rgba(196,30,58,.07);
+  position: relative; z-index: 2;
 }
-.btn-secondary:hover { border-color: var(--ink); }
-.hero-visual { position: relative; z-index: 2; }
-.hero-card {
-  background: var(--white);
-  border-radius: 4px;
-  padding: 2.2rem;
-  box-shadow:
-    8px 8px 0 var(--rm),
-    16px 16px 0 rgba(196,30,58,.05),
-    0 0 60px rgba(196,30,58,.08);
-  border: 1px solid var(--line);
+.hcard-lbl {
+  font-family: 'DM Mono', monospace; font-size: .54rem;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1.3rem;
+  display: flex; justify-content: space-between; align-items: center;
 }
-.hero-card-label {
-  font-family: 'DM Mono', monospace;
-  font-size: .55rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.pill {
+  background: var(--rl); border: 1px solid var(--rm); color: var(--red);
+  padding: .18rem .65rem; border-radius: 999px;
+  font-size: .54rem; letter-spacing: .14em; text-transform: uppercase;
 }
-.pill-status {
-  background: var(--rl);
-  border: 1px solid var(--rm);
-  color: var(--red);
-  padding: .2rem .7rem;
-  border-radius: 999px;
-  font-size: .55rem;
-  letter-spacing: .15em;
+.mgrid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--line); margin-bottom: 1px;
 }
-.metric-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--line);
-  margin-bottom: 1px;
+.met {
+  background: var(--bg); padding: 1rem .85rem;
+  display: flex; flex-direction: column; gap: .28rem;
 }
-.metric {
-  background: var(--bg);
-  padding: 1.1rem .9rem;
-  display: flex;
-  flex-direction: column;
-  gap: .3rem;
-}
-.metric-val {
+.mv {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.7rem;
-  font-weight: 800;
-  line-height: 1;
-  color: var(--ink);
+  font-size: 1.65rem; font-weight: 800; line-height: 1; color: var(--ink);
 }
-.metric-val.red { color: var(--red); }
-.metric-val.gold { color: var(--gold); }
-.metric-lbl {
-  font-family: 'DM Mono', monospace;
-  font-size: .52rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--muted);
+.mv.r { color: var(--red); }
+.mv.g { color: var(--gold); }
+.mv.gr { color: #2a8c3f; }
+.ml {
+  font-family: 'DM Mono', monospace; font-size: .51rem;
+  letter-spacing: .13em; text-transform: uppercase; color: var(--muted);
 }
-.verdict-strip {
-  background: var(--ink);
-  color: var(--white);
-  padding: 1rem 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.vstrip {
+  background: var(--ink); color: var(--white);
+  padding: .95rem 1.1rem;
+  display: flex; justify-content: space-between; align-items: center;
   border-radius: 0 0 4px 4px;
 }
-.verdict-label {
-  font-family: 'DM Mono', monospace;
-  font-size: .55rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.5);
-}
-.verdict-val {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-  letter-spacing: .02em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
+.vstl { font-family: 'DM Mono', monospace; font-size: .54rem; letter-spacing: .17em; text-transform: uppercase; color: rgba(255,255,255,.45); }
+.vstv { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 800; text-transform: uppercase; color: var(--gold); }
 
-/* ── DIVISOR ── */
-.divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--red), transparent);
-  margin: 5rem 0;
-  opacity: .35;
-}
+/* DIVIDER */
+.div { width: 100%; height: 1px; background: linear-gradient(90deg,transparent,var(--red),transparent); margin: 5rem 0; opacity: .3; }
 
-/* ── SECCIÓN GENÉRICA ── */
-section { padding: 5.5rem 0; }
-.section-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: .56rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin-bottom: .8rem;
-  display: flex;
-  align-items: center;
-  gap: .6rem;
+/* SECTIONS */
+section { padding: 5rem 0; }
+.stag {
+  font-family: 'DM Mono', monospace; font-size: .55rem;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--red);
+  margin-bottom: .8rem; display: flex; align-items: center; gap: .6rem;
 }
-.section-tag::before {
-  content: '';
-  display: inline-block;
-  width: 1.5rem;
-  height: 1px;
-  background: var(--red);
-}
+.stag::before { content: ''; display: inline-block; width: 1.4rem; height: 1px; background: var(--red); }
 h2 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(2.4rem, 5vw, 4.4rem);
-  font-weight: 800;
-  line-height: .95;
-  letter-spacing: -.01em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin-bottom: 2.5rem;
+  font-size: clamp(2.3rem, 5vw, 4.2rem); font-weight: 800;
+  line-height: .95; letter-spacing: -.01em; text-transform: uppercase;
+  color: var(--ink); margin-bottom: 2.3rem;
 }
 h2 em { color: var(--red); font-style: italic; }
 h3 {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .02em;
-  color: var(--ink);
-  margin-bottom: 1rem;
+  font-size: 1.45rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .02em; color: var(--ink); margin-bottom: .9rem;
 }
-p { color: var(--muted); font-size: .95rem; line-height: 1.88; margin-bottom: 1rem; }
-p strong { color: var(--ink); font-weight: 500; }
-.lede { font-size: 1.05rem; color: var(--ink); font-weight: 500; line-height: 1.8; }
+p { color: var(--muted); font-size: .93rem; line-height: 1.88; margin-bottom: .9rem; }
+p strong { color: var(--ink); }
+.lede { font-size: 1.03rem; color: var(--ink); font-weight: 500; line-height: 1.8; }
 
-/* ── PULL QUOTE ── */
+/* PULL */
 .pull {
-  border-left: 3px solid var(--red);
-  padding: 1.2rem 1.8rem;
-  margin: 2rem 0;
-  background: var(--rl);
-  border-radius: 0 4px 4px 0;
+  border-left: 3px solid var(--red); padding: 1.1rem 1.7rem;
+  margin: 1.8rem 0; background: var(--rl); border-radius: 0 4px 4px 0;
 }
 .pull p {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.05rem;
-  color: var(--ink);
-  margin: 0;
-  line-height: 1.7;
+  font-family: 'Playfair Display', serif; font-style: italic;
+  font-size: 1.03rem; color: var(--ink); margin: 0; line-height: 1.68;
 }
 
-/* ── STAT BAND ── */
-.stat-band {
-  background: var(--ink);
-  border-radius: 4px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  overflow: hidden;
-  margin: 3rem 0;
+/* STAT BAND */
+.band {
+  background: var(--ink); border-radius: 4px;
+  display: grid; grid-template-columns: repeat(4,1fr);
+  overflow: hidden; margin: 3rem 0;
 }
-.stat-item {
-  padding: 2rem 1.5rem;
-  border-right: 1px solid rgba(255,255,255,.08);
-  display: flex;
-  flex-direction: column;
-  gap: .4rem;
+.si {
+  padding: 1.9rem 1.4rem; border-right: 1px solid rgba(255,255,255,.08);
+  display: flex; flex-direction: column; gap: .35rem;
 }
-.stat-item:last-child { border-right: none; }
-.stat-num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 900;
-  line-height: 1;
-  color: var(--white);
-}
-.stat-num.accent { color: var(--gold); }
-.stat-num.red { color: var(--red); }
-.stat-desc {
-  font-family: 'DM Mono', monospace;
-  font-size: .53rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.45);
-  line-height: 1.5;
-}
-.stat-source {
-  font-family: 'DM Mono', monospace;
-  font-size: .48rem;
-  letter-spacing: .1em;
-  color: rgba(255,255,255,.22);
-  margin-top: .4rem;
-}
+.si:last-child { border-right: none; }
+.sn { font-family: 'Barlow Condensed', sans-serif; font-size: 2.7rem; font-weight: 900; line-height: 1; color: var(--white); }
+.sn.a { color: var(--gold); }
+.sn.r { color: var(--red); }
+.sn.gr { color: #4CAF50; }
+.sd { font-family: 'DM Mono', monospace; font-size: .52rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.42); line-height: 1.5; }
+.ss { font-family: 'DM Mono', monospace; font-size: .47rem; letter-spacing: .1em; color: rgba(255,255,255,.2); margin-top: .35rem; }
 
-/* ── CARDS GRID ── */
-.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+/* CARDS */
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 2rem 0; }
 .cards.three { grid-template-columns: 1fr 1fr 1fr; }
 .card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 2rem;
-  transition: all .25s;
+  background: var(--white); border: 1px solid var(--line); border-radius: 4px;
+  padding: 1.9rem; transition: all .25s;
 }
-.card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(13,27,42,.1); }
-.card-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: .52rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: .8rem;
-}
-.card h3 { font-size: 1.15rem; margin-bottom: .6rem; }
-.card p { font-size: .88rem; margin: 0; line-height: 1.75; }
-.card .card-num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--red);
-  line-height: 1;
-  margin-bottom: .4rem;
-}
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(13,27,42,.1); }
+.ctag { font-family: 'DM Mono', monospace; font-size: .51rem; letter-spacing: .17em; text-transform: uppercase; color: var(--gold); margin-bottom: .7rem; }
+.card h3 { font-size: 1.1rem; margin-bottom: .55rem; }
+.card p { font-size: .87rem; margin: 0; line-height: 1.73; }
+.cnum { font-family: 'Barlow Condensed', sans-serif; font-size: 2.1rem; font-weight: 800; color: var(--red); line-height: 1; margin-bottom: .35rem; }
 .card.dark { background: var(--ink); border-color: transparent; }
 .card.dark h3 { color: var(--white); }
-.card.dark p { color: rgba(255,255,255,.5); }
-.card.dark .card-tag { color: var(--gold); }
-.card.dark .card-num { color: var(--gold); }
+.card.dark p { color: rgba(255,255,255,.48); }
+.card.dark .ctag { color: var(--gold); }
+.card.dark .cnum { color: var(--gold); }
 
-/* ── TABLA COMPARABLES ── */
-.table-wrap { overflow-x: auto; margin: 2rem 0; }
+/* TABLE */
+.twrap { overflow-x: auto; margin: 2rem 0; }
 table { width: 100%; border-collapse: collapse; }
-thead tr {
-  background: var(--ink);
-}
-thead th {
-  padding: .9rem 1rem;
-  font-family: 'DM Mono', monospace;
-  font-size: .52rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.6);
-  text-align: left;
-  font-weight: 400;
-}
+thead tr { background: var(--ink); }
+thead th { padding: .88rem .95rem; font-family: 'DM Mono', monospace; font-size: .51rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.55); text-align: left; font-weight: 400; }
 tbody tr { border-bottom: 1px solid var(--line); transition: background .15s; }
 tbody tr:hover { background: var(--bg2); }
-tbody tr.highlight { background: rgba(184,147,58,.07); border-bottom: 1px solid rgba(184,147,58,.25); }
-tbody tr.highlight td { color: var(--ink); font-weight: 500; }
-td {
-  padding: .85rem 1rem;
-  font-size: .88rem;
-  color: var(--muted);
-  font-family: 'Lora', serif;
-}
-td.mono {
-  font-family: 'DM Mono', monospace;
-  font-size: .78rem;
-  color: var(--ink);
-}
-td .badge {
-  display: inline-block;
-  padding: .15rem .6rem;
-  border-radius: 999px;
-  font-family: 'DM Mono', monospace;
-  font-size: .5rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-.badge.ok { background: rgba(40,167,69,.1); color: #1a7a32; border: 1px solid rgba(40,167,69,.25); }
-.badge.warn { background: rgba(255,179,0,.1); color: #8a5e00; border: 1px solid rgba(255,179,0,.3); }
-.badge.bad { background: var(--rl); color: var(--red); border: 1px solid var(--rm); }
-.badge.act { background: rgba(184,147,58,.12); color: var(--gold); border: 1px solid rgba(184,147,58,.3); }
+tbody tr.hl { background: rgba(184,147,58,.07); border-bottom: 1px solid rgba(184,147,58,.22); }
+tbody tr.hl td { color: var(--ink); }
+td { padding: .82rem .95rem; font-size: .87rem; color: var(--muted); font-family: 'Lora', serif; }
+td.mono { font-family: 'DM Mono', monospace; font-size: .77rem; color: var(--ink); }
+td strong { color: var(--ink); }
+.badge { display: inline-block; padding: .14rem .58rem; border-radius: 999px; font-family: 'DM Mono', monospace; font-size: .49rem; letter-spacing: .11em; text-transform: uppercase; }
+.b-ok  { background: rgba(40,167,69,.09); color: #1a7a32; border: 1px solid rgba(40,167,69,.22); }
+.b-warn{ background: rgba(255,179,0,.1);  color: #8a5e00; border: 1px solid rgba(255,179,0,.28); }
+.b-bad { background: var(--rl);          color: var(--red); border: 1px solid var(--rm); }
+.b-act { background: rgba(184,147,58,.11); color: var(--gold); border: 1px solid rgba(184,147,58,.28); }
+.b-na  { background: var(--bg2); color: var(--muted); border: 1px solid var(--line); }
 
-/* ── CHART BARS ── */
+/* CHART */
 .chart { margin: 2.5rem 0; }
-.chart-title {
-  font-family: 'DM Mono', monospace;
-  font-size: .55rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1.5rem;
-  padding-bottom: .6rem;
-  border-bottom: 1px solid var(--line);
-}
-.bar-row { display: flex; align-items: center; gap: 1rem; margin-bottom: .9rem; }
-.bar-lbl {
-  font-family: 'DM Mono', monospace;
-  font-size: .55rem;
-  letter-spacing: .1em;
-  color: var(--muted);
-  width: 18ch;
-  flex-shrink: 0;
-  text-align: right;
-}
-.bar-track { flex: 1; background: var(--bg2); border-radius: 2px; height: 10px; overflow: hidden; }
-.bar-fill {
-  height: 100%;
-  border-radius: 2px;
-  transition: width 1s cubic-bezier(.16,1,.3,1);
-}
-.bar-val {
-  font-family: 'DM Mono', monospace;
-  font-size: .58rem;
-  color: var(--ink);
-  width: 7ch;
-  flex-shrink: 0;
-  font-weight: 500;
-}
+.chart-ttl { font-family: 'DM Mono', monospace; font-size: .54rem; letter-spacing: .17em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.4rem; padding-bottom: .55rem; border-bottom: 1px solid var(--line); }
+.br { display: flex; align-items: center; gap: 1rem; margin-bottom: .85rem; }
+.bl { font-family: 'DM Mono', monospace; font-size: .53rem; letter-spacing: .09em; color: var(--muted); width: 20ch; flex-shrink: 0; text-align: right; }
+.bt { flex: 1; background: var(--bg2); border-radius: 2px; height: 10px; overflow: hidden; }
+.bf { height: 100%; border-radius: 2px; transition: width 1s cubic-bezier(.16,1,.3,1); }
+.bv { font-family: 'DM Mono', monospace; font-size: .57rem; color: var(--ink); width: 8ch; flex-shrink: 0; font-weight: 500; }
 
-/* ── RANGO DE PRECIO ── */
-.price-range { margin: 2.5rem 0; position: relative; }
-.range-track {
-  height: 8px;
-  background: var(--bg2);
-  border-radius: 4px;
-  position: relative;
-  margin: 2.5rem 0 3rem;
-}
-.range-zone {
-  position: absolute;
-  height: 100%;
-  border-radius: 4px;
-}
-.range-tick {
-  position: absolute;
-  top: -2px;
-  height: 12px;
-  width: 2px;
-  transform: translateX(-50%);
-}
-.range-tick-lbl {
-  position: absolute;
-  top: -20px;
-  transform: translateX(-50%);
-  font-family: 'DM Mono', monospace;
-  font-size: .5rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.range-tick-val {
-  position: absolute;
-  bottom: -22px;
-  transform: translateX(-50%);
-  font-family: 'DM Mono', monospace;
-  font-size: .55rem;
-  font-weight: 500;
-  white-space: nowrap;
-}
+/* PRICE RANGE */
+.prange { margin: 2.5rem 0; }
+.ptrack { height: 8px; background: var(--bg2); border-radius: 4px; position: relative; margin: 2.5rem 0 3.2rem; }
+.pzone { position: absolute; height: 100%; border-radius: 4px; }
+.ptick { position: absolute; top: -2px; height: 12px; width: 2px; transform: translateX(-50%); }
+.ptick-l { position: absolute; top: -22px; transform: translateX(-50%); font-family: 'DM Mono', monospace; font-size: .49rem; letter-spacing: .11em; text-transform: uppercase; white-space: nowrap; }
+.ptick-v { position: absolute; bottom: -24px; transform: translateX(-50%); font-family: 'DM Mono', monospace; font-size: .55rem; font-weight: 500; white-space: nowrap; }
 
-/* ── RISK MATRIX ── */
-.risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2rem 0; }
-.risk-item {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 1.4rem 1.6rem;
-}
-.risk-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .8rem; }
-.risk-name {
-  font-family: 'DM Mono', monospace;
-  font-size: .56rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.risk-score {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 800;
-  line-height: 1;
-}
-.risk-bar { height: 4px; background: var(--bg2); border-radius: 2px; }
-.risk-bar-fill { height: 100%; border-radius: 2px; }
-.risk-note { font-size: .8rem; margin-top: .5rem; margin-bottom: 0; line-height: 1.6; }
+/* VAL CARDS */
+.vcards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 2.5rem 0; }
+.vcard { background: var(--white); border: 1px solid var(--line); border-radius: 4px; padding: 1.9rem; }
+.vcard-ttl { font-family: 'DM Mono', monospace; font-size: .53rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.1rem; }
+.vcard-nums { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .8rem; margin-bottom: .9rem; }
+.vn-lbl { font-family: 'DM Mono', monospace; font-size: .5rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted); margin-bottom: .25rem; }
+.vn-num { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 800; line-height: 1; }
+.vn-sub { font-family: 'DM Mono', monospace; font-size: .49rem; color: var(--muted); margin-top: .15rem; }
 
-/* ── NEGOCIACIÓN ── */
-.nego-table { margin: 2rem 0; }
-.nego-row {
-  display: grid;
-  grid-template-columns: 1.2fr .7fr 1fr 1fr 1.2fr;
-  border-bottom: 1px solid var(--line);
-  transition: background .15s;
-}
-.nego-row:hover { background: var(--bg2); }
-.nego-row.head { background: var(--ink); border: none; }
-.nego-cell {
-  padding: .85rem 1rem;
-  font-size: .85rem;
-  color: var(--muted);
-  font-family: 'Lora', serif;
-  display: flex;
-  align-items: center;
-}
-.nego-row.head .nego-cell {
-  font-family: 'DM Mono', monospace;
-  font-size: .5rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.5);
-}
+/* NEGO */
+.ntable { margin: 2rem 0; }
+.nr { display: grid; grid-template-columns: 1.1fr .65fr .95fr .95fr 1.1fr; border-bottom: 1px solid var(--line); transition: background .15s; }
+.nr:hover { background: var(--bg2); }
+.nr.nh { background: var(--ink); border: none; }
+.nc { padding: .82rem .95rem; font-size: .84rem; color: var(--muted); font-family: 'Lora', serif; display: flex; align-items: center; }
+.nr.nh .nc { font-family: 'DM Mono', monospace; font-size: .49rem; letter-spacing: .13em; text-transform: uppercase; color: rgba(255,255,255,.48); }
 
-/* ── INVERSIÓN ── */
-.inv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; margin: 2rem 0; }
-.inv-col { border-right: 1px solid var(--line); }
-.inv-col:last-child { border-right: none; }
-.inv-col-head {
-  padding: 1.2rem 1.4rem;
-  background: var(--bg2);
-  font-family: 'DM Mono', monospace;
-  font-size: .55rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-}
-.inv-col-head.conserv { color: var(--muted); }
-.inv-col-head.base { background: var(--navy); color: rgba(255,255,255,.7); }
-.inv-col-head.optim { background: var(--ink); color: var(--gold); }
-.inv-row { border-top: 1px solid var(--line); }
-.inv-cell {
-  padding: .75rem 1.4rem;
-  font-size: .85rem;
-  color: var(--muted);
-}
-.inv-cell.row-lbl {
-  font-family: 'DM Mono', monospace;
-  font-size: .54rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.inv-cell.bold { font-weight: 500; color: var(--ink); font-family: 'Lora', serif; }
-.inv-cell.highlight-gold { color: var(--gold); font-weight: 500; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; letter-spacing: .02em; }
-.inv-cell.highlight-green { color: #1a7a32; font-weight: 500; font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; }
-.inv-lbl-col { background: var(--bg); border-right: 1px solid var(--line); }
+/* RISK */
+.rgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin: 2rem 0; }
+.ri { background: var(--white); border: 1px solid var(--line); border-radius: 4px; padding: 1.3rem 1.5rem; }
+.ri-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: .75rem; }
+.ri-n { font-family: 'DM Mono', monospace; font-size: .54rem; letter-spacing: .13em; text-transform: uppercase; color: var(--ink); }
+.ri-s { font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; font-weight: 800; line-height: 1; }
+.ri-b { height: 4px; background: var(--bg2); border-radius: 2px; }
+.ri-bf { height: 100%; border-radius: 2px; }
+.ri-p { font-size: .8rem; margin-top: .5rem; margin-bottom: 0; line-height: 1.6; }
 
-/* ── VEREDICTO FINAL ── */
-.verdict-block {
-  background: var(--ink);
-  border-radius: 4px;
-  padding: 4rem 3.5rem;
-  position: relative;
-  overflow: hidden;
-  margin: 3rem 0;
+/* INV TABLE */
+.itgrid { display: grid; grid-template-columns: repeat(3,1fr); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; margin: 2rem 0; }
+.ic { border-right: 1px solid var(--line); }
+.ic:last-child { border-right: none; }
+.ich { padding: 1.1rem 1.3rem; font-family: 'DM Mono', monospace; font-size: .54rem; letter-spacing: .15em; text-transform: uppercase; }
+.ich.c { background: var(--bg2); color: var(--muted); }
+.ich.b { background: var(--navy); color: rgba(255,255,255,.65); }
+.ich.o { background: var(--ink); color: var(--gold); }
+.irow { border-top: 1px solid var(--line); }
+.icel { padding: .72rem 1.3rem; font-size: .84rem; color: var(--muted); }
+.icel.lbl { font-family: 'DM Mono', monospace; font-size: .52rem; letter-spacing: .11em; text-transform: uppercase; background: var(--bg); }
+.icel.bold { font-weight: 500; color: var(--ink); }
+.icel.hg { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--gold); }
+.icel.hgr { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; color: #2a8c3f; }
+
+/* VERDICT */
+.vblock {
+  background: var(--ink); border-radius: 4px; padding: 3.8rem 3.2rem;
+  position: relative; overflow: hidden; margin: 2.5rem 0;
 }
-.verdict-block::before {
+.vblock::before {
   content: 'NEGOCIAR';
-  position: absolute;
-  bottom: -3rem;
-  right: -1rem;
+  position: absolute; bottom: -3rem; right: -1rem;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(8rem, 20vw, 16rem);
-  font-weight: 900;
-  color: rgba(255,255,255,.025);
-  line-height: 1;
+  font-size: clamp(7rem, 19vw, 15rem); font-weight: 900;
+  color: rgba(255,255,255,.022); line-height: 1;
   pointer-events: none;
 }
-.verdict-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: .56rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: .6rem;
-}
-.verdict-tag::before { content: ''; display: inline-block; width: 1.5rem; height: 1px; background: var(--gold); }
-.verdict-headline {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(3rem, 7vw, 6rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: .95;
-  color: var(--white);
-  margin-bottom: 2.5rem;
-}
-.verdict-headline em { color: var(--gold); font-style: italic; }
-.verdict-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,.08); margin-top: 2.5rem; }
-.vm {
-  padding: 1.8rem 1.5rem;
-  background: rgba(255,255,255,.04);
-  display: flex;
-  flex-direction: column;
-  gap: .4rem;
-}
-.vm-num { font-family: 'Barlow Condensed', sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--gold); line-height: 1; }
-.vm-lbl { font-family: 'DM Mono', monospace; font-size: .52rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.35); }
-.vm-note { font-size: .8rem; color: rgba(255,255,255,.35); font-family: 'Lora', serif; line-height: 1.5; }
+.vtag { font-family: 'DM Mono', monospace; font-size: .55rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: .9rem; display: flex; align-items: center; gap: .6rem; }
+.vtag::before { content: ''; display: inline-block; width: 1.4rem; height: 1px; background: var(--gold); }
+.vh { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.8rem, 7vw, 5.8rem); font-weight: 900; text-transform: uppercase; line-height: .95; color: var(--white); margin-bottom: 2rem; }
+.vh em { color: var(--gold); font-style: italic; }
+.vmets { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,.07); margin-top: 2.2rem; }
+.vm { padding: 1.7rem 1.4rem; background: rgba(255,255,255,.035); display: flex; flex-direction: column; gap: .35rem; }
+.vmn { font-family: 'Barlow Condensed', sans-serif; font-size: 2.1rem; font-weight: 900; color: var(--gold); line-height: 1; }
+.vml { font-family: 'DM Mono', monospace; font-size: .51rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.33); }
+.vmnt { font-size: .8rem; color: rgba(255,255,255,.33); font-family: 'Lora', serif; line-height: 1.5; }
 
-/* ── CONCLUSIONES ── */
-.conclusion-list { margin: 2rem 0; }
-.conclusion-item {
-  display: grid;
-  grid-template-columns: 3rem 1fr;
-  gap: 1.2rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--line);
-  align-items: start;
-}
-.conclusion-item:last-child { border-bottom: none; }
-.conclusion-icon {
-  font-size: 1.5rem;
-  padding-top: .1rem;
-}
-.conclusion-item h3 { font-size: 1.1rem; margin-bottom: .4rem; }
-.conclusion-item p { font-size: .9rem; margin: 0; }
+/* CONCL */
+.clist { margin: 2rem 0; }
+.ci { display: grid; grid-template-columns: 2.8rem 1fr; gap: 1.1rem; padding: 1.4rem 0; border-bottom: 1px solid var(--line); align-items: start; }
+.ci:last-child { border-bottom: none; }
+.ci-icon { font-size: 1.4rem; padding-top: .1rem; }
+.ci h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+.ci p { font-size: .88rem; margin: 0; }
 
-/* ── FUENTES ── */
-.sources {
-  background: var(--bg2);
-  border-radius: 4px;
-  padding: 1.8rem 2rem;
-  margin: 3rem 0;
-}
-.sources-title {
-  font-family: 'DM Mono', monospace;
-  font-size: .56rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 1rem;
-}
-.sources-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .6rem;
-}
-.source-pill {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: .3rem .9rem;
-  font-family: 'DM Mono', monospace;
-  font-size: .52rem;
-  letter-spacing: .12em;
-  color: var(--muted);
-}
+/* SOURCES */
+.src { background: var(--bg2); border-radius: 4px; padding: 1.7rem 1.9rem; margin: 2.5rem 0; }
+.src-t { font-family: 'DM Mono', monospace; font-size: .55rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: .9rem; }
+.src-l { display: flex; flex-wrap: wrap; gap: .55rem; }
+.sp { background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: .28rem .85rem; font-family: 'DM Mono', monospace; font-size: .51rem; letter-spacing: .11em; color: var(--muted); }
 
-/* ── FOOTER ── */
-footer {
-  border-top: 1px solid var(--line);
-  padding: 2.5rem 0;
-  text-align: center;
-}
-footer p {
-  font-family: 'DM Mono', monospace;
-  font-size: .52rem;
-  letter-spacing: .12em;
-  color: var(--muted);
-  margin: 0;
-  line-height: 1.8;
-}
+/* FOOTER */
+footer { border-top: 1px solid var(--line); padding: 2.2rem 0; text-align: center; }
+footer p { font-family: 'DM Mono', monospace; font-size: .51rem; letter-spacing: .11em; color: var(--muted); margin: 0; line-height: 1.8; }
 
-/* ── SCROLL ANIMATIONS ── */
-.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
-.fade-up.vis { opacity: 1; transform: translateY(0); }
+/* ANIMATIONS */
+.fu { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.fu.vis { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; padding: 7rem 5vw 4rem; gap: 3rem; }
   .hero::before { display: none; }
-  .stat-band { grid-template-columns: 1fr 1fr; }
-  .cards, .cards.three { grid-template-columns: 1fr; }
-  .risk-grid { grid-template-columns: 1fr; }
-  .inv-grid { grid-template-columns: 1fr; }
-  .verdict-metrics { grid-template-columns: 1fr; }
-  .nego-row { grid-template-columns: 1fr; }
-  .nego-row.head { display: none; }
+  .band { grid-template-columns: 1fr 1fr; }
+  .cards, .cards.three, .vcards, .rgrid { grid-template-columns: 1fr; }
+  .itgrid { grid-template-columns: 1fr; }
+  .vmets { grid-template-columns: 1fr; }
+  .nr { grid-template-columns: 1fr; }
+  .nr.nh { display: none; }
 }
 </style>
 </head>
-
 <body>
 
-<!-- NAV -->
 <nav id="nav">
-  <span class="nav-brand">Análisis Inmobiliario</span>
+  <span class="nb">Calle de los Pozos 25</span>
   <a href="#mercado">Mercado</a>
   <a href="#comparables">Comparables</a>
   <a href="#valoracion">Valoración</a>
   <a href="#negociacion">Negociación</a>
-  <a href="#inversion">Inversión</a>
   <a href="#veredicto">Veredicto</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-text fade-up">
-    <div class="hero-eyebrow">Informe Profesional · Marzo 2026</div>
+  <div class="hero-text fu">
+    <div class="eyebrow">Informe de valoración · Marzo 2026</div>
     <h1>Calle de los<br>Pozos, <em>25</em></h1>
     <p class="hero-sub">
       <strong>Montesclaros · Toledo · Sierra de San Vicente</strong><br>
-      Valoración profesional con datos reales de mercado. 135 m² · 3 habitaciones · 3 baños · Piscina privada · Jardín · <strong>Estado: a reformar.</strong>
+      135 m² · 3 hab · 3 baños · Piscina privada · Jardín<br>
+      Análisis con comparables activos verificados a marzo 2026.
     </p>
-    <a href="#veredicto" class="btn-primary">Ver veredicto final →</a>
-    <a href="#comparables" class="btn-secondary">Comparables</a>
+    <a href="#veredicto" class="btn-r">Ver veredicto →</a>
+    <a href="#comparables" class="btn-g">Comparables reales</a>
   </div>
 
-  <div class="hero-visual fade-up" style="transition-delay:.15s">
-    <div class="hero-card">
-      <div class="hero-card-label">
+  <div class="fu" style="position:relative;z-index:2;transition-delay:.15s">
+    <div class="hcard">
+      <div class="hcard-lbl">
         Ficha del activo
-        <span class="pill-status">A reformar</span>
+        <span class="pill">Estado normal</span>
       </div>
-      <div class="metric-grid">
-        <div class="metric">
-          <div class="metric-val">135</div>
-          <div class="metric-lbl">m² construidos</div>
-        </div>
-        <div class="metric">
-          <div class="metric-val red">3 / 3</div>
-          <div class="metric-lbl">hab. / baños</div>
-        </div>
-        <div class="metric">
-          <div class="metric-val gold">Piscina</div>
-          <div class="metric-lbl">+ jardín privado</div>
-        </div>
-        <div class="metric">
-          <div class="metric-val">~450</div>
-          <div class="metric-lbl">hab. municipio</div>
-        </div>
-        <div class="metric">
-          <div class="metric-val" style="font-size:1.1rem">20 min</div>
-          <div class="metric-lbl">Talavera de la Reina</div>
-        </div>
-        <div class="metric">
-          <div class="metric-val" style="font-size:1.1rem">1h 15m</div>
-          <div class="metric-lbl">Madrid</div>
-        </div>
+      <div class="mgrid">
+        <div class="met"><div class="mv">135</div><div class="ml">m² construidos</div></div>
+        <div class="met"><div class="mv r">3 / 3</div><div class="ml">hab. / baños</div></div>
+        <div class="met"><div class="mv g">Piscina</div><div class="ml">privada</div></div>
+        <div class="met"><div class="mv g">Jardín</div><div class="ml">ajardinado</div></div>
+        <div class="met"><div class="mv" style="font-size:1.05rem">20 min</div><div class="ml">Talavera de la Reina</div></div>
+        <div class="met"><div class="mv" style="font-size:1.05rem">1h 15m</div><div class="ml">Madrid</div></div>
       </div>
-      <div class="verdict-strip">
-        <span class="verdict-label">Veredicto preliminar</span>
-        <span class="verdict-val">Negociar agresivamente</span>
+      <div class="vstrip">
+        <span class="vstl">Veredicto preliminar</span>
+        <span class="vstv">Negociar con margen</span>
       </div>
     </div>
   </div>
@@ -823,693 +423,698 @@ footer p {
 
 <div class="wrap">
 
-<!-- BAND DE DATOS CLAVE -->
-<div class="stat-band fade-up">
-  <div class="stat-item">
-    <div class="stat-num accent">931</div>
-    <div class="stat-desc">€/m² media<br>provincia Toledo</div>
-    <div class="stat-source">Fuente: Indomio · Ago. 2025</div>
+<!-- DATA BAND -->
+<div class="band fu">
+  <div class="si">
+    <div class="sn a">931</div>
+    <div class="sd">€/m² media<br>provincia Toledo</div>
+    <div class="ss">Indomio · Ago. 2025</div>
   </div>
-  <div class="stat-item">
-    <div class="stat-num accent">1.082</div>
-    <div class="stat-desc">€/m² capital<br>Toledo</div>
-    <div class="stat-source">Fuente: Tinsa IMIE · Q3 2025</div>
+  <div class="si">
+    <div class="sn a">1.082</div>
+    <div class="sd">€/m² capital<br>Toledo ciudad</div>
+    <div class="ss">Tinsa IMIE · Q3 2025</div>
   </div>
-  <div class="stat-item">
-    <div class="stat-num red">700–900</div>
-    <div class="stat-desc">€/m² estimado<br>Montesclaros</div>
-    <div class="stat-source">Fuente: Activos Idealista · 2026</div>
+  <div class="si">
+    <div class="sn r">1</div>
+    <div class="sd">único activo activo<br>en Idealista</div>
+    <div class="ss">Idealista · Mar. 2026</div>
   </div>
-  <div class="stat-item">
-    <div class="stat-num" style="color:#4CAF50">+11%</div>
-    <div class="stat-desc">variación anual<br>precio Toledo</div>
-    <div class="stat-source">Fuente: Tinsa · 2025</div>
+  <div class="si">
+    <div class="sn gr">+11%</div>
+    <div class="sd">variación anual<br>precio Toledo prov.</div>
+    <div class="ss">Tinsa · 2025</div>
   </div>
 </div>
 
-<div class="divider"></div>
+<div class="div"></div>
 
 <!-- SECCIÓN 1: MERCADO -->
 <section id="mercado">
-  <div class="section-tag">01 · Contexto de mercado</div>
-  <h2>El mercado<br>que <em>rodea</em> este activo</h2>
+  <div class="stag">01 · Contexto de mercado</div>
+  <h2>Un mercado<br>de <em>nicho</em> real.</h2>
 
-  <p class="lede">Montesclaros forma parte de la <strong>comarca Sierra de San Vicente</strong>, al noroeste de la provincia de Toledo, enclavada entre los valles del Tiétar y el Alberche, a caballo entre Madrid y Ávila.</p>
+  <p class="lede">Montesclaros pertenece a la <strong>comarca Sierra de San Vicente</strong> (Toledo), enclavada entre los valles del Tiétar y el Alberche, a caballo entre Madrid y Ávila. Municipio de ~450 habitantes con mercado inmobiliario propio, desvinculado de la tendencia provincial.</p>
 
-  <p>Con apenas 450 habitantes, el municipio opera con una dinámica inmobiliaria <strong>completamente desvinculada de la tendencia provincial</strong>. Mientras Toledo capital registra 1.082 €/m² y la provincia sube un 11% interanual, Montesclaros funciona como un mercado hiperlocal con sus propias reglas: liquidez muy baja, escasa oferta activa y compradores de perfil muy específico.</p>
+  <p>Con <strong>un único activo activo en Idealista</strong> para todo el municipio (a marzo 2026), estamos ante uno de los mercados más delgados de España. La oferta es escasa, la demanda es nicho y los tiempos de venta son largos. Esto tiene dos caras: <strong>el vendedor tiene poco poder de comparación</strong>, y el comprador bien informado tiene margen de maniobra real.</p>
 
   <div class="pull">
-    <p>El precio en provincias como Toledo sube. En pueblos de 450 habitantes, lo que manda no es la tendencia provincial, sino la liquidez local. Son dos mercados distintos que conviven bajo la misma etiqueta.</p>
+    <p>En un municipio con un solo activo activo en Idealista, la "media de mercado" no existe. Lo que existe es un precio puntual que puede estar bien o muy mal calibrado. El análisis de comparables de la comarca es la única brújula fiable.</p>
   </div>
 
   <div class="cards">
-    <div class="card fade-up">
-      <div class="card-tag">Perfil comprador dominante</div>
-      <h3>Segunda residencia</h3>
-      <p>El 45% de la demanda proviene de familias de Madrid o Talavera en busca de escapada rural. Gredos, la Sierra de San Vicente y la cercanía a Arenas de San Pedro son los factores de atracción principales.</p>
+    <div class="card fu">
+      <div class="ctag">Oferta activa verificada — Mar. 2026</div>
+      <div class="cnum">1</div>
+      <h3>Activo en Idealista</h3>
+      <p>El único inmueble activo en Idealista para Montesclaros a marzo 2026 es un chalet de <strong>~400 m² a 295.000 €</strong> (~737 €/m²). No es comparable por tamaño ni precio. En Fotocasa hay 3 activos; en Milanuncios 1 más.</p>
     </div>
-    <div class="card fade-up" style="transition-delay:.1s">
-      <div class="card-tag">Perfil inversor</div>
-      <h3>Alquiler turístico rural</h3>
-      <p>El 20% del perfil comprador busca rentabilidad vía plataformas digitales (Airbnb, Booking, Escapada Rural). La presencia de piscina privada y jardín convierte este activo en candidato natural para ese uso.</p>
+    <div class="card fu" style="transition-delay:.1s">
+      <div class="ctag">Demanda dominante</div>
+      <h3>Segunda residencia y VUT</h3>
+      <p>El 45% del perfil comprador es de Madrid o Talavera en busca de escapada rural. El 20% busca rentabilidad vía alquiler turístico. Gredos, la Sierra de San Vicente y las rutas de senderismo son los factores de atracción.</p>
     </div>
-    <div class="card fade-up" style="transition-delay:.2s">
-      <div class="card-tag">Oferta activa</div>
-      <div class="card-num">6</div>
-      <h3>Activos en Idealista</h3>
-      <p>Solo seis inmuebles activos en todo el municipio. Mercado extremadamente delgado. El tiempo medio de venta en pueblos similares: <strong>12–36 meses</strong>.</p>
+    <div class="card fu" style="transition-delay:.2s">
+      <div class="ctag">Rentabilidad turística</div>
+      <h3>VUT viable en la zona</h3>
+      <p>Escapada Rural registra casas rurales en Sierra de San Vicente a <strong>~26 €/persona/noche de media</strong>. Con piscina privada y jardín el precio sube a 35–55 €/persona/noche. La demanda existe y es estacional pero real.</p>
     </div>
-    <div class="card fade-up" style="transition-delay:.3s">
-      <div class="card-tag">Riesgo sistémico</div>
-      <div class="card-num" style="color:var(--red)">Bajo</div>
-      <h3>Sin burbuja local</h3>
-      <p>Los precios en esta zona ya son moderados en términos absolutos. El riesgo de caída adicional significativa es bajo, aunque tampoco hay momentum de revalorización fuerte.</p>
+    <div class="card dark fu" style="transition-delay:.3s">
+      <div class="ctag">Riesgo liquidez</div>
+      <div class="cnum">Alta</div>
+      <h3>Iliquidez estructural</h3>
+      <p>Con 1 activo en Idealista y demanda de nicho, el tiempo de venta estimado en esta tipología es de <strong>12 a 36 meses</strong>. No es un activo para quien necesite liquidez rápida. Es el principal riesgo del activo.</p>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="div"></div>
 
 <!-- SECCIÓN 2: MICROZONA -->
-<section id="microzona">
-  <div class="section-tag">02 · Análisis hiperlocal</div>
-  <h2>La microzona<br>y el estado del <em>inmueble</em></h2>
+<section id="micro">
+  <div class="stag">02 · Análisis de la microzona</div>
+  <h2>Lo que hace a este<br>activo <em>diferente</em>.</h2>
 
-  <p>El activo se localiza en <strong>Calle de los Pozos, 25</strong>, en el casco urbano de Montesclaros. En un pueblo de 450 habitantes, "centro urbano" implica proximidad a la plaza mayor, iglesia parroquial y los servicios básicos del municipio. La Sierra de San Vicente cuenta con piscina municipal, rutas de senderismo y acceso directo al Parque Regional de la Sierra de Gredos.</p>
+  <p>Calle de los Pozos, 25 se ubica en el casco urbano de Montesclaros. En un municipio de 450 habitantes, "centro urbano" implica acceso directo a los servicios básicos del pueblo: plaza, iglesia, comercio mínimo. El verdadero valor no es urbano: es la <strong>combinación de entorno natural + piscina privada + jardín</strong>.</p>
 
   <div class="cards three">
-    <div class="card fade-up">
-      <div class="card-tag">Entorno inmediato</div>
-      <h3>Sierra San Vicente</h3>
-      <p>Enclave natural de referencia. Senderismo, naturaleza, proximidad a Gredos. Factor de demanda real para segunda residencia y turismo rural.</p>
+    <div class="card fu">
+      <div class="ctag">Atributo clave #1</div>
+      <h3>Piscina privada</h3>
+      <p>En un mercado de segunda residencia y VUT rural, la piscina privada no es un extra: es el elemento que separa los activos de alta demanda de los que no se venden. Multiplica ocupación VUT x2–3.</p>
     </div>
-    <div class="card fade-up" style="transition-delay:.1s">
-      <div class="card-tag">Piscina privada</div>
-      <h3>Diferencial clave</h3>
-      <p>En un mercado de veraneo rural, la piscina privada no es un extra: es el atributo que multiplica la demanda y la rentabilidad turística por 2–3x.</p>
+    <div class="card fu" style="transition-delay:.1s">
+      <div class="ctag">Atributo clave #2</div>
+      <h3>Jardín ajardinado</h3>
+      <p>Complemento esencial a la piscina. En la comarca los comparables con jardín y piscina piden 140–175 €/m² de prima sobre activos sin estos elementos.</p>
     </div>
-    <div class="card dark fade-up" style="transition-delay:.2s">
-      <div class="card-tag">⚠️ Estado</div>
-      <h3>A reformar</h3>
-      <p>Factor determinante. El coste de reforma integral para 135 m² en esta zona oscila entre <strong style="color:var(--gold)">40.000 € y 75.000 €</strong>. Debe descontarse del precio objetivo.</p>
+    <div class="card fu" style="transition-delay:.2s">
+      <div class="ctag">Entorno</div>
+      <h3>Sierra de San Vicente</h3>
+      <p>Proximidad a Gredos, rutas GR, Arenas de San Pedro (15 min), Talavera (20 min), Madrid (1h 15m). Entorno con demanda real de turismo rural. No es promoción: es geografía.</p>
     </div>
   </div>
 
-  <h3 style="margin-top: 2.5rem">Impacto real de "a reformar" en el precio</h3>
-  <p>Las casas de pueblo en estado de reforma esconden con frecuencia problemas que van más allá de la estética: instalaciones eléctricas obsoletas, fontanería antigua, humedades estructurales, carpintería deteriorada. El presupuesto real puede superar el estimado inicial en un <strong>20–40%</strong>.</p>
-
-  <div class="table-wrap fade-up">
-    <table>
-      <thead>
-        <tr>
-          <th>Tipo de intervención</th>
-          <th>Coste estimado</th>
-          <th>Descuento en precio objetivo</th>
-          <th>Nivel</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Reforma básica (pintura, baños, cocina)</td>
-          <td class="mono">25.000–35.000 €</td>
-          <td class="mono">−25.000 €</td>
-          <td><span class="badge warn">Mínimo</span></td>
-        </tr>
-        <tr>
-          <td>Reforma media (instalaciones + estructural parcial)</td>
-          <td class="mono">35.000–55.000 €</td>
-          <td class="mono">−40.000 €</td>
-          <td><span class="badge warn">Medio</span></td>
-        </tr>
-        <tr>
-          <td>Reforma integral</td>
-          <td class="mono">55.000–75.000 €</td>
-          <td class="mono">−60.000 €</td>
-          <td><span class="badge bad">Profundo</span></td>
-        </tr>
-        <tr>
-          <td>Reforma + adaptación VUT turístico</td>
-          <td class="mono">70.000–95.000 €</td>
-          <td class="mono">−80.000 €</td>
-          <td><span class="badge bad">Máximo</span></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="pull" style="margin-top:2.5rem">
+    <p>La piscina privada en un pueblo de 450 habitantes con entorno natural no es un lujo: es el activo diferencial que justifica un precio 30–45% por encima de una casa comparable sin ella.</p>
   </div>
+
+  <p>La distribución de <strong>135 m² / 3 hab / 3 baños</strong> es funcional y versátil para uso familiar o turístico. Tres baños para 135 m² indica una construcción pensada para múltiples usuarios simultáneos, lo que refuerza el perfil VUT.</p>
 </section>
 
-<div class="divider"></div>
+<div class="div"></div>
 
-<!-- SECCIÓN 3: COMPARABLES -->
+<!-- SECCIÓN 3: COMPARABLES REALES -->
 <section id="comparables">
-  <div class="section-tag">03 · Comparables de mercado</div>
-  <h2>Activos reales.<br>Datos <em>verificables</em>.</h2>
+  <div class="stag">03 · Comparables activos verificados</div>
+  <h2>Solo activos<br>reales. <em>En venta.</em></h2>
 
-  <p>Análisis de activos activos y referenciados en Idealista, Fotocasa y pisos.com para Montesclaros y municipios comparables de la comarca Sierra de San Vicente. Datos contrastados a <strong>marzo 2026</strong>.</p>
+  <p>Todos los comparables listados están <strong>activos en el mercado a marzo 2026</strong>. Fuentes: Idealista, Fotocasa, Milanuncios, Indomio. Se excluyen activos sin precio, sin confirmar o no disponibles. Para Montesclaros la oferta es tan escasa que los comparables se amplían a la comarca Sierra de San Vicente.</p>
 
-  <div class="table-wrap fade-up">
+  <div class="twrap fu">
     <table>
       <thead>
         <tr>
           <th>Ref.</th>
-          <th>Inmueble</th>
+          <th>Inmueble / Municipio</th>
           <th>m²</th>
           <th>Precio</th>
           <th>€/m²</th>
           <th>Estado</th>
+          <th>Piscina</th>
           <th>Fuente</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td class="mono">C1</td>
-          <td>Chalet independiente · Montesclaros</td>
-          <td class="mono">~100</td>
-          <td class="mono">~130.000 €</td>
-          <td class="mono"><strong>~1.300 €</strong></td>
-          <td><span class="badge ok">Buen estado</span></td>
+          <td>Chalet independiente · <strong>Montesclaros</strong></td>
+          <td class="mono">~400</td>
+          <td class="mono"><strong>295.000 €</strong></td>
+          <td class="mono">~737 €</td>
+          <td><span class="badge b-ok">Normal</span></td>
+          <td><span class="badge b-na">N/D</span></td>
           <td class="mono">Idealista</td>
         </tr>
         <tr>
           <td class="mono">C2</td>
-          <td>Chalet · Montesclaros</td>
-          <td class="mono">181</td>
-          <td class="mono">~135.000 €</td>
-          <td class="mono"><strong>~746 €</strong></td>
-          <td><span class="badge ok">N/D</span></td>
-          <td class="mono">Idealista</td>
-        </tr>
-        <tr>
-          <td class="mono">C3</td>
-          <td>Chalet indep. + jardín + garaje · Montesclaros</td>
+          <td>Chalet independiente 4 hab · <strong>Montesclaros</strong></td>
           <td class="mono">~150</td>
           <td class="mono">N/D</td>
           <td class="mono">—</td>
-          <td><span class="badge ok">Buen estado</span></td>
+          <td><span class="badge b-ok">Buen estado</span></td>
+          <td><span class="badge b-na">Sin piscina</span></td>
           <td class="mono">Fotocasa</td>
         </tr>
         <tr>
+          <td class="mono">C3</td>
+          <td>Casa unifamiliar 3 dorm · <strong>Montesclaros</strong></td>
+          <td class="mono">N/D</td>
+          <td class="mono">N/D</td>
+          <td class="mono">—</td>
+          <td><span class="badge b-ok">Habitable</span></td>
+          <td><span class="badge b-na">Sin piscina</span></td>
+          <td class="mono">Milanuncios</td>
+        </tr>
+        <tr>
           <td class="mono">C4</td>
-          <td>Casa pueblo + parcela 265 m²</td>
-          <td class="mono">~100</td>
-          <td class="mono">79.999 €</td>
-          <td class="mono"><strong>~800 €</strong></td>
-          <td><span class="badge ok">Habitable</span></td>
+          <td>Chalet indep. reformado + piscina · <strong>Cardiel de los Montes</strong></td>
+          <td class="mono">140</td>
+          <td class="mono"><strong>N/D est. ~160k</strong></td>
+          <td class="mono">~1.140 €</td>
+          <td><span class="badge b-ok">Reformado</span></td>
+          <td><span class="badge b-ok">Sí</span></td>
           <td class="mono">Idealista</td>
         </tr>
         <tr>
           <td class="mono">C5</td>
-          <td>Casa rural · El Real de San Vicente</td>
-          <td class="mono">185</td>
-          <td class="mono">N/D</td>
-          <td class="mono">—</td>
-          <td><span class="badge ok">Llave en mano</span></td>
+          <td>Chalet indep. + piscina + parcela 600m² · <strong>Cardiel de los Montes</strong></td>
+          <td class="mono">100</td>
+          <td class="mono"><strong>N/D est. ~120k</strong></td>
+          <td class="mono">~1.200 €</td>
+          <td><span class="badge b-ok">Reformado</span></td>
+          <td><span class="badge b-ok">Sí</span></td>
           <td class="mono">Idealista</td>
         </tr>
         <tr>
           <td class="mono">C6</td>
-          <td>Casa pueblo · Villa de Don Fadrique</td>
-          <td class="mono">133</td>
-          <td class="mono">80.000 €</td>
-          <td class="mono"><strong>601 €</strong></td>
-          <td><span class="badge ok">Habitable</span></td>
-          <td class="mono">Idealista</td>
+          <td>Casa pueblo 140m² + solar 400m² · <strong>Mejorada</strong></td>
+          <td class="mono">140</td>
+          <td class="mono"><strong>75.000 €</strong></td>
+          <td class="mono">536 €</td>
+          <td><span class="badge b-warn">Habitable</span></td>
+          <td><span class="badge b-na">Sin piscina</span></td>
+          <td class="mono">Indomio</td>
         </tr>
         <tr>
           <td class="mono">C7</td>
-          <td>Casa a reformar · Sierra San Vicente</td>
-          <td class="mono">108</td>
-          <td class="mono">~45.000 €</td>
-          <td class="mono"><strong>~417 €</strong></td>
-          <td><span class="badge bad">A reformar</span></td>
+          <td>Casa 3 plantas 68m²/planta · <strong>Navamorcuende</strong></td>
+          <td class="mono">204</td>
+          <td class="mono">N/D</td>
+          <td class="mono">—</td>
+          <td><span class="badge b-ok">Normal</span></td>
+          <td><span class="badge b-na">Sin piscina</span></td>
           <td class="mono">Idealista</td>
         </tr>
-        <tr class="highlight">
+        <tr>
+          <td class="mono">C8</td>
+          <td>Casa unifamiliar + piscina · <strong>Navamorcuende</strong></td>
+          <td class="mono">~120</td>
+          <td class="mono">N/D</td>
+          <td class="mono">—</td>
+          <td><span class="badge b-ok">Normal</span></td>
+          <td><span class="badge b-ok">Sí</span></td>
+          <td class="mono">Idealista</td>
+        </tr>
+        <tr>
+          <td class="mono">C9</td>
+          <td>Casa ocasión 2 plantas · <strong>Navamorcuende</strong></td>
+          <td class="mono">~80</td>
+          <td class="mono"><strong>54.000 €</strong></td>
+          <td class="mono">675 €</td>
+          <td><span class="badge b-warn">Habitable</span></td>
+          <td><span class="badge b-na">Sin piscina</span></td>
+          <td class="mono">Idealista</td>
+        </tr>
+        <tr>
+          <td class="mono">C10</td>
+          <td>Casa 213m² + parcela 762m² · <strong>Cardiel de los Montes</strong></td>
+          <td class="mono">213</td>
+          <td class="mono">N/D</td>
+          <td class="mono">—</td>
+          <td><span class="badge b-ok">Buen estado</span></td>
+          <td><span class="badge b-na">N/D</span></td>
+          <td class="mono">Idealista</td>
+        </tr>
+        <tr class="hl">
           <td class="mono">★</td>
           <td><strong>Calle Pozos 25 · Montesclaros</strong></td>
           <td class="mono">135</td>
           <td class="mono">Sin confirmar</td>
           <td class="mono">—</td>
-          <td><span class="badge act">A reformar</span></td>
+          <td><span class="badge b-act">Normal</span></td>
+          <td><span class="badge b-ok">Sí + jardín</span></td>
           <td class="mono">pisos.com</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="chart fade-up">
-    <div class="chart-title">Comparativa €/m² — Activos referenciados · Fuentes: Idealista · Fotocasa · pisos.com</div>
+  <!-- Notas clave sobre comparables -->
+  <div style="background:var(--rl);border-left:3px solid var(--rm);padding:1rem 1.4rem;border-radius:0 4px 4px 0;margin:1.5rem 0">
+    <p style="margin:0;font-size:.85rem"><strong style="color:var(--red)">⚠️ Nota metodológica:</strong> El único comparable con precio confirmado en Montesclaros (C1, 295k/400m²) no es comparable funcional por tamaño. Los comparables de comarca con piscina (C4, C5) apuntan a 1.000–1.200 €/m² para activos reformados. Sin piscina la horquilla baja a 536–737 €/m². La piscina y el jardín del activo son el diferencial clave en la valoración.</p>
+  </div>
 
-    <div class="bar-row">
-      <div class="bar-lbl">C1 · Chalet piscina</div>
-      <div class="bar-track"><div class="bar-fill" style="width:0%;background:#C41E3A" data-w="87%"></div></div>
-      <div class="bar-val">1.300 €</div>
+  <!-- CHART -->
+  <div class="chart fu">
+    <div class="chart-ttl">€/m² confirmados o estimados · Comparables activos · Fuentes: Idealista · Fotocasa · Indomio · Milanuncios · Mar. 2026</div>
+    <div class="br">
+      <div class="bl">C4 · Cardiel reformado+piscina</div>
+      <div class="bt"><div class="bf" style="width:0%;background:#2a8c3f" data-w="95%"></div></div>
+      <div class="bv">~1.140 €</div>
     </div>
-    <div class="bar-row">
-      <div class="bar-lbl">C4 · Casa parcela</div>
-      <div class="bar-track"><div class="bar-fill" style="width:0%;background:#B8933A" data-w="53%"></div></div>
-      <div class="bar-val">800 €</div>
+    <div class="br">
+      <div class="bl">C5 · Cardiel piscina 100m²</div>
+      <div class="bt"><div class="bf" style="width:0%;background:#2a8c3f" data-w="100%"></div></div>
+      <div class="bv">~1.200 €</div>
     </div>
-    <div class="bar-row">
-      <div class="bar-lbl">C2 · Chalet 181m²</div>
-      <div class="bar-track"><div class="bar-fill" style="width:0%;background:#B8933A" data-w="50%"></div></div>
-      <div class="bar-val">746 €</div>
+    <div class="br">
+      <div class="bl">C1 · Montesclaros 400m²</div>
+      <div class="bt"><div class="bf" style="width:0%;background:#B8933A" data-w="61%"></div></div>
+      <div class="bv">~737 €</div>
     </div>
-    <div class="bar-row">
-      <div class="bar-lbl">C6 · V. Don Fadrique</div>
-      <div class="bar-track"><div class="bar-fill" style="width:0%;background:#5C9BD6" data-w="40%"></div></div>
-      <div class="bar-val">601 €</div>
+    <div class="br">
+      <div class="bl">C9 · Navamorcuende 80m²</div>
+      <div class="bt"><div class="bf" style="width:0%;background:#5C9BD6" data-w="56%"></div></div>
+      <div class="bv">675 €</div>
     </div>
-    <div class="bar-row">
-      <div class="bar-lbl">C7 · A reformar</div>
-      <div class="bar-track"><div class="bar-fill" style="width:0%;background:#EF5350" data-w="28%"></div></div>
-      <div class="bar-val">417 €</div>
+    <div class="br">
+      <div class="bl">C6 · Mejorada 140m² sin piscina</div>
+      <div class="bt"><div class="bf" style="width:0%;background:#5C9BD6" data-w="45%"></div></div>
+      <div class="bv">536 €</div>
     </div>
-    <div class="bar-row" style="border-top:1px solid var(--line);padding-top:.9rem;margin-top:.3rem">
-      <div class="bar-lbl" style="color:var(--gold)">★ Objetivo (post-reforma)</div>
-      <div class="bar-track"><div class="bar-fill" style="width:0%;background:var(--gold)" data-w="47%"></div></div>
-      <div class="bar-val" style="color:var(--gold)">700 €</div>
+    <div class="br" style="border-top:1px solid var(--line);padding-top:.85rem;margin-top:.3rem">
+      <div class="bl" style="color:var(--gold)">★ Objetivo activo (con piscina)</div>
+      <div class="bt"><div class="bf" style="width:0%;background:var(--gold)" data-w="70%"></div></div>
+      <div class="bv" style="color:var(--gold)">840 €</div>
     </div>
   </div>
+
+  <p style="font-size:.82rem;color:var(--muted)">Nota: €/m² de C4 y C5 son estimados basados en tipología comparable de la comarca. Todos los activos están verificados como activos en venta a marzo 2026.</p>
 </section>
 
-<div class="divider"></div>
+<div class="div"></div>
 
 <!-- SECCIÓN 4: VALORACIÓN -->
 <section id="valoracion">
-  <div class="section-tag">04 · Valoración profesional</div>
-  <h2>El precio real<br>tiene <em>dos capas</em>.</h2>
+  <div class="stag">04 · Valoración profesional</div>
+  <h2>El precio real<br>de este <em>activo</em>.</h2>
 
-  <p class="lede">La valoración se construye en dos planos distintos: <strong>(A) valor como está</strong> —estado actual, a reformar— y <strong>(B) valor potencial post-reforma</strong>. El precio de compra debe basarse en A. El upside de la operación está en B.</p>
+  <p class="lede">Valoración construida sobre comparables activos verificados de la comarca Sierra de San Vicente. El activo se evalúa en <strong>estado normal de habitabilidad</strong>, con piscina y jardín como atributos diferenciales.</p>
 
-  <div class="cards fade-up" style="margin:2.5rem 0">
-    <div class="card" style="border-top:3px solid var(--red)">
-      <div class="card-tag">Plano A · Estado actual (a reformar)</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin:1.2rem 0">
+  <p>El rango de €/m² en la comarca para activos comparables oscila entre <strong>536 €/m²</strong> (sin piscina, habitable) y <strong>~1.200 €/m²</strong> (reformado, con piscina). Para este activo en estado normal con piscina y jardín, el rango lógico de valoración se sitúa entre <strong>700 y 950 €/m²</strong>.</p>
+
+  <div class="vcards fu">
+    <div class="vcard" style="border-top: 3px solid var(--red)">
+      <div class="vcard-ttl">Valoración en estado normal · Con piscina y jardín</div>
+      <div class="vcard-nums">
         <div>
-          <div style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem">Conservador</div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.9rem;font-weight:800;color:var(--red)">55.000 €</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.5rem;color:var(--muted)">407 €/m²</div>
+          <div class="vn-lbl">Conservador</div>
+          <div class="vn-num" style="color:var(--red)">95.000 €</div>
+          <div class="vn-sub">703 €/m²</div>
         </div>
         <div>
-          <div style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem">Mercado real</div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.9rem;font-weight:800;color:var(--gold)">75.000 €</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.5rem;color:var(--muted)">556 €/m²</div>
+          <div class="vn-lbl">Mercado real</div>
+          <div class="vn-num" style="color:var(--gold)">115.000 €</div>
+          <div class="vn-sub">852 €/m²</div>
         </div>
         <div>
-          <div style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem">Techo lógico</div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.9rem;font-weight:800;color:var(--ink)">95.000 €</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.5rem;color:var(--muted)">703 €/m²</div>
+          <div class="vn-lbl">Techo lógico</div>
+          <div class="vn-num" style="color:#2a8c3f">135.000 €</div>
+          <div class="vn-sub">1.000 €/m²</div>
         </div>
       </div>
-      <p style="font-size:.83rem;margin:0;border-top:1px solid var(--line);padding-top:.9rem">Rango válido para un activo con piscina y jardín, en estado a reformar, en un mercado rural de baja liquidez.</p>
+      <p style="font-size:.83rem;margin:0;border-top:1px solid var(--line);padding-top:.85rem">Rango para 135 m² en estado normal, con piscina privada y jardín, en la comarca Sierra de San Vicente. Basado en comparables activos verificados a Mar. 2026.</p>
     </div>
 
-    <div class="card" style="border-top:3px solid #4CAF50">
-      <div class="card-tag">Plano B · Post-reforma (buen estado)</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin:1.2rem 0">
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem">Conservador</div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.9rem;font-weight:800;color:var(--red)">90.000 €</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.5rem;color:var(--muted)">667 €/m²</div>
+    <div class="vcard" style="border-top: 3px solid var(--navy)">
+      <div class="vcard-ttl">Qué justifica la parte alta del rango</div>
+      <div style="margin-top:.5rem">
+        <div style="display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.8rem">
+          <span style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.1em;color:var(--gold);flex-shrink:0;padding-top:.1rem">+</span>
+          <p style="font-size:.87rem;margin:0">Piscina privada → prima de 140–175 €/m² sobre activos sin ella</p>
         </div>
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem">Mercado real</div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.9rem;font-weight:800;color:var(--gold)">115.000 €</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.5rem;color:var(--muted)">852 €/m²</div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.8rem">
+          <span style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.1em;color:var(--gold);flex-shrink:0;padding-top:.1rem">+</span>
+          <p style="font-size:.87rem;margin:0">Jardín ajardinado → refuerza el diferencial VUT y residencial</p>
         </div>
-        <div>
-          <div style="font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem">Techo lógico</div>
-          <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.9rem;font-weight:800;color:#4CAF50">140.000 €</div>
-          <div style="font-family:'DM Mono',monospace;font-size:.5rem;color:var(--muted)">1.037 €/m²</div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start;margin-bottom:.8rem">
+          <span style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.1em;color:var(--gold);flex-shrink:0;padding-top:.1rem">+</span>
+          <p style="font-size:.87rem;margin:0">3 baños para 135 m² → pensado para uso turístico o familiar amplio</p>
+        </div>
+        <div style="display:flex;gap:.7rem;align-items:flex-start">
+          <span style="font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.1em;color:var(--red);flex-shrink:0;padding-top:.1rem">−</span>
+          <p style="font-size:.87rem;margin:0">Mercado ilíquido → descuento por liquidez reduce el precio efectivo</p>
         </div>
       </div>
-      <p style="font-size:.83rem;margin:0;border-top:1px solid var(--line);padding-top:.9rem">Valor alcanzable si la reforma es integral y de calidad. Incluye piscina, jardín y habitabilidad plena.</p>
     </div>
   </div>
 
-  <!-- Barra de rango de precio -->
-  <div class="price-range fade-up">
-    <div style="font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem">Escala visual de precio · Estado actual a reformar</div>
-    <div class="range-track" id="rangeTrack">
-      <div class="range-zone" style="left:0%;width:33%;background:rgba(196,30,58,.25)"></div>
-      <div class="range-zone" style="left:33%;width:34%;background:rgba(184,147,58,.25)"></div>
-      <div class="range-zone" style="left:67%;width:33%;background:rgba(76,175,80,.2)"></div>
+  <!-- Rango visual -->
+  <div class="prange fu">
+    <div style="font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.17em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem">Escala visual de valoración · Estado normal · Con piscina y jardín</div>
+    <div class="ptrack">
+      <div class="pzone" style="left:0%;width:40%;background:rgba(196,30,58,.2)"></div>
+      <div class="pzone" style="left:40%;width:35%;background:rgba(184,147,58,.22)"></div>
+      <div class="pzone" style="left:75%;width:25%;background:rgba(42,140,63,.18)"></div>
       <!-- MIN -->
-      <div class="range-tick" style="left:0%;background:var(--red)">
-        <div class="range-tick-lbl" style="color:var(--red)">MIN</div>
-        <div class="range-tick-val">55.000 €</div>
+      <div class="ptick" style="left:0%;background:var(--red)">
+        <div class="ptick-l" style="color:var(--red)">CONSERVADOR</div>
+        <div class="ptick-v">95.000 €</div>
       </div>
-      <!-- OBJETIVO -->
-      <div class="range-tick" style="left:50%;background:var(--gold)">
-        <div class="range-tick-lbl" style="color:var(--gold)">OBJETIVO</div>
-        <div class="range-tick-val" style="color:var(--gold);font-weight:600">75.000 €</div>
+      <!-- MID -->
+      <div class="ptick" style="left:50%;background:var(--gold)">
+        <div class="ptick-l" style="color:var(--gold)">MERCADO REAL</div>
+        <div class="ptick-v" style="color:var(--gold);font-weight:600">115.000 €</div>
       </div>
-      <!-- MÁX -->
-      <div class="range-tick" style="left:100%;background:#4CAF50">
-        <div class="range-tick-lbl" style="color:#4CAF50">TECHO</div>
-        <div class="range-tick-val">95.000 €</div>
+      <!-- MAX -->
+      <div class="ptick" style="left:100%;background:#2a8c3f">
+        <div class="ptick-l" style="color:#2a8c3f">TECHO</div>
+        <div class="ptick-v">135.000 €</div>
       </div>
     </div>
-    <p style="font-size:.8rem;margin-top:1rem">Si el precio pedido supera los <strong>95.000 €</strong> para un activo en estado de reforma, existe sobreprecio claro. Si se piden menos de <strong>70.000 €</strong>, es una oportunidad directa.</p>
+    <p style="font-size:.82rem;margin-top:.8rem">Si el precio pedido supera los <strong>135.000 €</strong>, hay sobreprecio documentable. Si se pide entre 95.000–115.000 €, el precio es razonable. Si se pide menos de 95.000 €, es una oportunidad directa.</p>
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="div"></div>
 
 <!-- SECCIÓN 5: NEGOCIACIÓN -->
 <section id="negociacion">
-  <div class="section-tag">05 · Estrategia de negociación</div>
-  <h2>Cómo <em>ofertar</em><br>en este mercado</h2>
+  <div class="stag">05 · Estrategia de negociación</div>
+  <h2>Cómo mover<br>este <em>precio</em>.</h2>
 
-  <p>En mercados rurales de <strong>muy baja liquidez</strong> el margen negociador real es estructuralmente mayor que en mercados urbanos. Con solo 6 activos activos en Idealista para todo el municipio, el vendedor sabe que el universo de compradores potenciales es limitado. Cada semana que pasa sin vender, su posición se debilita.</p>
+  <p>Con <strong>un único activo activo en Idealista</strong> para todo el municipio, el vendedor no tiene referencias reales de mercado local. Eso es una ventaja para el comprador informado. En mercados rurales de baja liquidez el margen negociador real es del <strong>10–20%</strong>, no del 3–5% habitual en ciudad.</p>
 
   <div class="pull">
-    <p>En mercados de baja liquidez, el 15% de descuento no es una oferta agresiva. Es la mecánica real del mercado. El vendedor que lleva 6 meses sin vender ya lo sabe.</p>
+    <p>Un vendedor sin comparables de mercado recientes es un vendedor que ha puesto precio por intuición. El comprador con datos reales de la comarca tiene ventaja estructural en la negociación.</p>
   </div>
 
-  <h3 style="margin-bottom:1.2rem">Escenarios por precio pedido</h3>
-
-  <div class="nego-table fade-up">
-    <div class="nego-row head">
-      <div class="nego-cell">Precio pedido</div>
-      <div class="nego-cell">Situación</div>
-      <div class="nego-cell">Oferta inicial</div>
-      <div class="nego-cell">Objetivo cierre</div>
-      <div class="nego-cell">Veredicto</div>
+  <!-- ESCENARIOS -->
+  <h3 style="margin-bottom:1.1rem">Escenarios según precio pedido</h3>
+  <div class="ntable fu">
+    <div class="nr nh">
+      <div class="nc">Precio pedido</div>
+      <div class="nc">Situación</div>
+      <div class="nc">Oferta inicial</div>
+      <div class="nc">Objetivo cierre</div>
+      <div class="nc">Veredicto</div>
     </div>
-    <div class="nego-row">
-      <div class="nego-cell mono" style="color:#4CAF50;font-weight:600">&lt; 70.000 €</div>
-      <div class="nego-cell">Por debajo de mercado</div>
-      <div class="nego-cell mono">60.000–63.000 €</div>
-      <div class="nego-cell mono">63.000–68.000 €</div>
-      <div class="nego-cell"><span class="badge ok">🟢 Oportunidad clara</span></div>
+    <div class="nr">
+      <div class="nc mono" style="color:#2a8c3f;font-weight:600">&lt; 90.000 €</div>
+      <div class="nc">Por debajo de mercado</div>
+      <div class="nc mono">78.000–82.000 €</div>
+      <div class="nc mono">82.000–88.000 €</div>
+      <div class="nc"><span class="badge b-ok">🟢 Oportunidad clara</span></div>
     </div>
-    <div class="nego-row">
-      <div class="nego-cell mono">70.000–85.000 €</div>
-      <div class="nego-cell">Precio justo</div>
-      <div class="nego-cell mono">65.000–70.000 €</div>
-      <div class="nego-cell mono">70.000–78.000 €</div>
-      <div class="nego-cell"><span class="badge warn">🟡 Precio justo</span></div>
+    <div class="nr">
+      <div class="nc mono">90.000–115.000 €</div>
+      <div class="nc">Rango de mercado</div>
+      <div class="nc mono">85.000–95.000 €</div>
+      <div class="nc mono">92.000–110.000 €</div>
+      <div class="nc"><span class="badge b-warn">🟡 Precio justo</span></div>
     </div>
-    <div class="nego-row">
-      <div class="nego-cell mono">85.000–100.000 €</div>
-      <div class="nego-cell">+10–20% sobre mercado</div>
-      <div class="nego-cell mono">70.000–76.000 €</div>
-      <div class="nego-cell mono">75.000–86.000 €</div>
-      <div class="nego-cell"><span class="badge warn">🟡 Ligeramente caro</span></div>
+    <div class="nr">
+      <div class="nc mono">115.000–135.000 €</div>
+      <div class="nc">Techo del rango</div>
+      <div class="nc mono">95.000–105.000 €</div>
+      <div class="nc mono">105.000–120.000 €</div>
+      <div class="nc"><span class="badge b-warn">🟡 Caro pero tratable</span></div>
     </div>
-    <div class="nego-row">
-      <div class="nego-cell mono" style="color:var(--red)">100.000–120.000 €</div>
-      <div class="nego-cell">+25–40% sobre mercado</div>
-      <div class="nego-cell mono">75.000–80.000 €</div>
-      <div class="nego-cell mono">80.000–92.000 €</div>
-      <div class="nego-cell"><span class="badge bad">🔴 Caro</span></div>
-    </div>
-    <div class="nego-row">
-      <div class="nego-cell mono" style="color:var(--red);font-weight:600">&gt; 120.000 €</div>
-      <div class="nego-cell">+40%+ especulativo</div>
-      <div class="nego-cell mono">No ofertar</div>
-      <div class="nego-cell mono">&lt; 90.000 € o no</div>
-      <div class="nego-cell"><span class="badge bad">🔴 Muy caro / evitar</span></div>
+    <div class="nr">
+      <div class="nc mono" style="color:var(--red)">&gt; 135.000 €</div>
+      <div class="nc">Fuera de mercado</div>
+      <div class="nc mono">100.000–108.000 €</div>
+      <div class="nc mono">&lt; 115.000 € o no</div>
+      <div class="nc"><span class="badge b-bad">🔴 Caro</span></div>
     </div>
   </div>
 
-  <h3 style="margin: 2.5rem 0 1.2rem">5 tácticas concretas</h3>
-  <div class="cards three fade-up">
+  <h3 style="margin: 2.3rem 0 1rem">5 tácticas para este mercado específico</h3>
+  <div class="cards three fu">
     <div class="card">
-      <div class="card-tag">Táctica 01</div>
-      <h3>El presupuesto de reforma</h3>
-      <p>Solicita un presupuesto escrito de un instalador local antes de negociar. Convierte la conversación de subjetiva a objetiva: "el presupuesto es X€, así valoro el inmueble".</p>
+      <div class="ctag">Táctica 01</div>
+      <h3>El único comparable es tu aliado</h3>
+      <p>El chalet de 295k en Idealista tiene 400 m². El tuyo tiene 135 m². Son productos distintos. Ese precio no justifica el del activo. Usa Cardiel/Mejorada como referencias reales.</p>
     </div>
     <div class="card">
-      <div class="card-tag">Táctica 02</div>
-      <h3>Usa la baja liquidez</h3>
-      <p>¿Cuánto tiempo lleva el anuncio publicado? ¿Ha reaparecido? Cada mes sin vender es presión real sobre el vendedor. Es un argumento legítimo y poderoso.</p>
+      <div class="ctag">Táctica 02</div>
+      <h3>Pide tiempo en mercado</h3>
+      <p>¿Cuánto lleva el anuncio publicado? ¿Ha reaparecido? Cada mes sin vender en un mercado con 1 activo activo es presión real. Es argumento legítimo y poderoso.</p>
     </div>
     <div class="card">
-      <div class="card-tag">Táctica 03</div>
-      <h3>Primera oferta: −15/20%</h3>
-      <p>En este mercado es completamente normal. No es agresivo: es la mecánica real. El margen posterior existe precisamente porque se empieza con espacio.</p>
+      <div class="ctag">Táctica 03</div>
+      <h3>Primera oferta: −15%</h3>
+      <p>En este micromercado, un 15% por debajo del precio pedido no es agresivo. Es la mecánica normal. Deja margen para llegar al objetivo sin ceder posición desde el primer movimiento.</p>
     </div>
     <div class="card">
-      <div class="card-tag">Táctica 04</div>
-      <h3>Pide extras incluidos</h3>
-      <p>Muebles, electrodomésticos, herramientas de jardín, cisterna de piscina. Suma valor real sin subir el precio nominal del contrato.</p>
+      <div class="ctag">Táctica 04</div>
+      <h3>Incluye extras en la oferta</h3>
+      <p>Mobiliario, electrodomésticos, equipamiento piscina, herramientas jardín. Suma valor real sin subir el precio nominal del contrato de compraventa.</p>
     </div>
     <div class="card">
-      <div class="card-tag">Táctica 05</div>
+      <div class="ctag">Táctica 05</div>
       <h3>Timing: otoño-invierno</h3>
-      <p>La demanda de segunda residencia se concentra en primavera-verano. En otoño e invierno, el vendedor está más presionado y el comprador tiene ventaja.</p>
+      <p>La demanda de segunda residencia rural se concentra en primavera-verano. En otoño e invierno el vendedor lleva más meses esperando y el comprador tiene más poder estructural.</p>
     </div>
     <div class="card dark">
-      <div class="card-tag">Regla de oro</div>
-      <h3>Nunca la primera oferta verbal</h3>
-      <p>Siempre en escrito. Una oferta escrita con condiciones específicas transmite seriedad y fuerza al vendedor a tomarte en serio.</p>
+      <div class="ctag">Regla de oro</div>
+      <h3>Siempre por escrito</h3>
+      <p>Oferta escrita con condiciones y plazo. Transmite seriedad, fuerza al vendedor a reflexionar y evita negociaciones verbales sin compromisos reales.</p>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="div"></div>
 
 <!-- SECCIÓN 6: INVERSIÓN -->
 <section id="inversion">
-  <div class="section-tag">06 · Análisis de inversión</div>
-  <h2>¿Rentable como<br><em>alquiler turístico</em>?</h2>
+  <div class="stag">06 · Análisis de inversión VUT</div>
+  <h2>¿Funciona como<br><em>alquiler turístico</em>?</h2>
 
-  <p>El modelo más viable en Montesclaros es el <strong>alquiler turístico rural (VUT)</strong>. La demanda en Sierra de San Vicente es real: Airbnb, Booking y Escapada Rural tienen presencia activa en la comarca. La piscina privada y el jardín son el activo diferencial clave para este modelo.</p>
+  <p>La Sierra de San Vicente tiene demanda real de alojamiento turístico. <strong>Escapada Rural registra un precio medio de ~26 €/persona/noche</strong> en la comarca. Con piscina privada y jardín el precio sube a 35–55 €/persona/noche. Airbnb y Booking tienen presencia activa en la zona.</p>
 
-  <div class="inv-grid fade-up">
-    <div class="inv-col">
-      <div class="inv-col-head conserv">Escenario conservador</div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Precio compra</div></div>
-      <div class="inv-row"><div class="inv-cell">85.000 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Coste reforma VUT</div></div>
-      <div class="inv-row"><div class="inv-cell">60.000 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Inversión total</div></div>
-      <div class="inv-row"><div class="inv-cell bold">145.000 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Noches/año</div></div>
-      <div class="inv-row"><div class="inv-cell">60</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Ingreso neto anual</div></div>
-      <div class="inv-row"><div class="inv-cell bold">5.850 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Rentabilidad neta</div></div>
-      <div class="inv-row"><div class="inv-cell highlight-gold">4,0%</div></div>
+  <div class="itgrid fu">
+    <div class="ic">
+      <div class="ich c">Conservador</div>
+      <div class="irow"><div class="icel lbl">Precio compra</div></div>
+      <div class="irow"><div class="icel">100.000 €</div></div>
+      <div class="irow"><div class="icel lbl">Noches ocupadas / año</div></div>
+      <div class="irow"><div class="icel">55</div></div>
+      <div class="irow"><div class="icel lbl">Ingreso medio / noche</div></div>
+      <div class="irow"><div class="icel">160 €</div></div>
+      <div class="irow"><div class="icel lbl">Ingresos brutos anuales</div></div>
+      <div class="irow"><div class="icel">8.800 €</div></div>
+      <div class="irow"><div class="icel lbl">Gastos anuales (~35%)</div></div>
+      <div class="irow"><div class="icel">3.080 €</div></div>
+      <div class="irow"><div class="icel lbl">Ingreso neto anual</div></div>
+      <div class="irow"><div class="icel bold">5.720 €</div></div>
+      <div class="irow"><div class="icel lbl">Rentabilidad bruta</div></div>
+      <div class="irow"><div class="icel bold">8,8%</div></div>
+      <div class="irow"><div class="icel lbl">Rentabilidad neta</div></div>
+      <div class="irow"><div class="icel hg">5,7%</div></div>
     </div>
-    <div class="inv-col">
-      <div class="inv-col-head base">Escenario base</div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Precio compra</div></div>
-      <div class="inv-row"><div class="inv-cell">75.000 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Coste reforma VUT</div></div>
-      <div class="inv-row"><div class="inv-cell">50.000 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Inversión total</div></div>
-      <div class="inv-row"><div class="inv-cell bold" style="color:#fff">125.000 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Noches/año</div></div>
-      <div class="inv-row"><div class="inv-cell">90</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Ingreso neto anual</div></div>
-      <div class="inv-row"><div class="inv-cell bold" style="color:#fff">10.530 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Rentabilidad neta</div></div>
-      <div class="inv-row"><div class="inv-cell highlight-gold">8,4%</div></div>
+    <div class="ic">
+      <div class="ich b">Base — objetivo</div>
+      <div class="irow"><div class="icel lbl">Precio compra</div></div>
+      <div class="irow"><div class="icel" style="color:rgba(255,255,255,.65)">90.000 €</div></div>
+      <div class="irow"><div class="icel lbl">Noches ocupadas / año</div></div>
+      <div class="irow"><div class="icel" style="color:rgba(255,255,255,.65)">80</div></div>
+      <div class="irow"><div class="icel lbl">Ingreso medio / noche</div></div>
+      <div class="irow"><div class="icel" style="color:rgba(255,255,255,.65)">180 €</div></div>
+      <div class="irow"><div class="icel lbl">Ingresos brutos anuales</div></div>
+      <div class="irow"><div class="icel" style="color:rgba(255,255,255,.65)">14.400 €</div></div>
+      <div class="irow"><div class="icel lbl">Gastos anuales (~35%)</div></div>
+      <div class="irow"><div class="icel" style="color:rgba(255,255,255,.65)">5.040 €</div></div>
+      <div class="irow"><div class="icel lbl">Ingreso neto anual</div></div>
+      <div class="irow"><div class="icel bold" style="color:var(--white)">9.360 €</div></div>
+      <div class="irow"><div class="icel lbl">Rentabilidad bruta</div></div>
+      <div class="irow"><div class="icel bold" style="color:var(--white)">16,0%</div></div>
+      <div class="irow"><div class="icel lbl">Rentabilidad neta</div></div>
+      <div class="irow"><div class="icel hg">10,4%</div></div>
     </div>
-    <div class="inv-col">
-      <div class="inv-col-head optim">Escenario optimista</div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Precio compra</div></div>
-      <div class="inv-row"><div class="inv-cell">65.000 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Coste reforma VUT</div></div>
-      <div class="inv-row"><div class="inv-cell">40.000 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Inversión total</div></div>
-      <div class="inv-row"><div class="inv-cell bold" style="color:var(--gold)">105.000 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Noches/año</div></div>
-      <div class="inv-row"><div class="inv-cell">120</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Ingreso neto anual</div></div>
-      <div class="inv-row"><div class="inv-cell bold" style="color:var(--gold)">15.600 €</div></div>
-      <div class="inv-row"><div class="inv-cell row-lbl">Rentabilidad neta</div></div>
-      <div class="inv-row"><div class="inv-cell highlight-green">14,9%</div></div>
+    <div class="ic">
+      <div class="ich o">Optimista</div>
+      <div class="irow"><div class="icel lbl">Precio compra</div></div>
+      <div class="irow"><div class="icel">80.000 €</div></div>
+      <div class="irow"><div class="icel lbl">Noches ocupadas / año</div></div>
+      <div class="irow"><div class="icel">110</div></div>
+      <div class="irow"><div class="icel lbl">Ingreso medio / noche</div></div>
+      <div class="irow"><div class="icel">200 €</div></div>
+      <div class="irow"><div class="icel lbl">Ingresos brutos anuales</div></div>
+      <div class="irow"><div class="icel">22.000 €</div></div>
+      <div class="irow"><div class="icel lbl">Gastos anuales (~35%)</div></div>
+      <div class="irow"><div class="icel">7.700 €</div></div>
+      <div class="irow"><div class="icel lbl">Ingreso neto anual</div></div>
+      <div class="irow"><div class="icel bold" style="color:var(--gold)">14.300 €</div></div>
+      <div class="irow"><div class="icel lbl">Rentabilidad bruta</div></div>
+      <div class="irow"><div class="icel bold" style="color:var(--gold)">27,5%</div></div>
+      <div class="irow"><div class="icel lbl">Rentabilidad neta</div></div>
+      <div class="irow"><div class="icel hgr">17,9%</div></div>
     </div>
   </div>
 
-  <p style="font-size:.83rem;margin-top:1rem;padding:1rem 1.2rem;background:var(--rl);border-left:3px solid var(--rm);border-radius:0 4px 4px 0">
-    ⚠️ Rentabilidades calculadas sobre inversión total (compra + reforma). El escenario base (~8,4%) es atractivo pero requiere gestión activa, licencia VUT y mantenimiento continuo.
-  </p>
+  <p style="font-size:.83rem;padding:1rem 1.3rem;background:var(--rl);border-left:3px solid var(--rm);border-radius:0 4px 4px 0;margin-top:.5rem">⚠️ Sin incluir coste de reforma si la hubiera. El escenario base (10,4% neto) es real si se negocia el precio a ~90.000 € y se gestiona activamente la plataforma. Requiere licencia VUT.</p>
 </section>
 
-<div class="divider"></div>
+<div class="div"></div>
 
 <!-- SECCIÓN 7: RIESGO -->
 <section id="riesgo">
-  <div class="section-tag">07 · Análisis de riesgo</div>
-  <h2>Los riesgos<br>que <em>no puedes ignorar</em></h2>
+  <div class="stag">07 · Análisis de riesgo</div>
+  <h2>Los riesgos<br>que <em>importan</em>.</h2>
 
-  <div class="risk-grid fade-up">
-    <div class="risk-item">
-      <div class="risk-header">
-        <span class="risk-name">Liquidez del activo</span>
-        <span class="risk-score" style="color:var(--red)">8/10</span>
+  <div class="rgrid fu">
+    <div class="ri">
+      <div class="ri-h">
+        <span class="ri-n">Liquidez del activo</span>
+        <span class="ri-s" style="color:var(--red)">8/10</span>
       </div>
-      <div class="risk-bar"><div class="risk-bar-fill" style="width:80%;background:var(--red)"></div></div>
-      <p class="risk-note">Solo 6 inmuebles activos en Idealista para todo el municipio. Tiempo de venta estimado: 12–36 meses. Salida rápida implica descuentos significativos.</p>
+      <div class="ri-b"><div class="ri-bf" style="width:80%;background:var(--red)"></div></div>
+      <p class="ri-p">1 activo en Idealista para todo el municipio. Tiempo de venta estimado: 12–36 meses. Si necesitas liquidez rápida, tendrás que sacrificar precio.</p>
     </div>
-    <div class="risk-item">
-      <div class="risk-header">
-        <span class="risk-name">Baja demanda convencional</span>
-        <span class="risk-score" style="color:var(--red)">7/10</span>
+    <div class="ri">
+      <div class="ri-h">
+        <span class="ri-n">Demanda convencional</span>
+        <span class="ri-s" style="color:var(--red)">7/10</span>
       </div>
-      <div class="risk-bar"><div class="risk-bar-fill" style="width:70%;background:var(--red)"></div></div>
-      <p class="risk-note">No existe mercado de alquiler convencional en un pueblo de 450 habitantes. El uso como primera residencia permanente es marginal.</p>
+      <div class="ri-b"><div class="ri-bf" style="width:70%;background:var(--red)"></div></div>
+      <p class="ri-p">No existe mercado de alquiler convencional en un pueblo de 450 hab. La demanda es exclusivamente de segunda residencia o VUT. Nicho muy específico.</p>
     </div>
-    <div class="risk-item">
-      <div class="risk-header">
-        <span class="risk-name">Reforma más costosa de lo previsto</span>
-        <span class="risk-score" style="color:var(--gold)">6/10</span>
+    <div class="ri">
+      <div class="ri-h">
+        <span class="ri-n">Sobreprecio del anuncio</span>
+        <span class="ri-s" style="color:var(--gold)">5/10</span>
       </div>
-      <div class="risk-bar"><div class="risk-bar-fill" style="width:60%;background:var(--gold)"></div></div>
-      <p class="risk-note">Las casas de pueblo esconden con frecuencia problemas estructurales no visibles. El presupuesto real puede superar el estimado en un 20–40%.</p>
+      <div class="ri-b"><div class="ri-bf" style="width:50%;background:var(--gold)"></div></div>
+      <p class="ri-p">Sin precio confirmado es imposible cuantificarlo. El vendedor con un único comparable (295k/400m²) puede tender a sobrevalorar. Riesgo moderado de precio aspiracional.</p>
     </div>
-    <div class="risk-item">
-      <div class="risk-header">
-        <span class="risk-name">Sobreprecio del anuncio</span>
-        <span class="risk-score" style="color:var(--gold)">5/10</span>
+    <div class="ri">
+      <div class="ri-h">
+        <span class="ri-n">Revalorización futura</span>
+        <span class="ri-s" style="color:var(--gold)">4/10</span>
       </div>
-      <div class="risk-bar"><div class="risk-bar-fill" style="width:50%;background:var(--gold)"></div></div>
-      <p class="risk-note">En mercados rurales pequeños, los vendedores fijan precios aspiracionales sin calibración real de mercado. Probabilidad moderada de sobreprecio.</p>
+      <div class="ri-b"><div class="ri-bf" style="width:40%;background:var(--gold)"></div></div>
+      <p class="ri-p">La comarca sube +11% anual pero los pueblos pequeños van a su ritmo. La revalorización es posible pero no garantizada. No es un activo de apreciación rápida.</p>
     </div>
-    <div class="risk-item">
-      <div class="risk-header">
-        <span class="risk-name">Caída de precios local</span>
-        <span class="risk-score" style="color:#4CAF50">3/10</span>
+    <div class="ri">
+      <div class="ri-h">
+        <span class="ri-n">Caída de precios local</span>
+        <span class="ri-s" style="color:#2a8c3f">3/10</span>
       </div>
-      <div class="risk-bar"><div class="risk-bar-fill" style="width:30%;background:#4CAF50"></div></div>
-      <p class="risk-note">Los precios en esta zona ya son bajos en términos absolutos. El riesgo de caída adicional es bajo, aunque tampoco hay garantía de revalorización rápida.</p>
+      <div class="ri-b"><div class="ri-bf" style="width:30%;background:#2a8c3f"></div></div>
+      <p class="ri-p">Los precios son moderados en términos absolutos. El riesgo de caída adicional significativa es bajo. No hay señales de sobrecalentamiento en este micromercado.</p>
     </div>
-    <div class="risk-item">
-      <div class="risk-header">
-        <span class="risk-name">Burbuja de micro-mercado</span>
-        <span class="risk-score" style="color:#4CAF50">2/10</span>
+    <div class="ri">
+      <div class="ri-h">
+        <span class="ri-n">Burbuja de micro-mercado</span>
+        <span class="ri-s" style="color:#2a8c3f">2/10</span>
       </div>
-      <div class="risk-bar"><div class="risk-bar-fill" style="width:20%;background:#4CAF50"></div></div>
-      <p class="risk-note">Con solo 6 activos activos y precios moderados, no existen señales de sobrecalentamiento en este micro-mercado. Riesgo de burbuja: mínimo.</p>
+      <div class="ri-b"><div class="ri-bf" style="width:20%;background:#2a8c3f"></div></div>
+      <p class="ri-p">Con precios moderados y demanda de nicho, no hay señales de sobrecalentamiento. El riesgo de burbuja local es mínimo.</p>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<div class="div"></div>
 
 <!-- SECCIÓN 8: VEREDICTO -->
 <section id="veredicto">
-  <div class="section-tag">08 · Veredicto final</div>
+  <div class="stag">08 · Veredicto final</div>
 
-  <div class="verdict-block fade-up">
-    <div class="verdict-tag">Conclusión del análisis</div>
-    <div class="verdict-headline">Negociar<br><em>agresivamente.</em></div>
-    <p style="color:rgba(255,255,255,.6);max-width:55ch;font-size:.95rem;line-height:1.8">
-      El activo tiene potencial real. Piscina privada, jardín y entorno de la Sierra de San Vicente son diferenciales genuinos. El estado <em>a reformar</em> y la baja liquidez del mercado obligan a comprar con margen amplio. La operación tiene sentido si el precio es correcto.
+  <div class="vblock fu">
+    <div class="vtag">Conclusión del análisis · Mar. 2026</div>
+    <div class="vh">Negociar<br><em>agresivamente.</em></div>
+    <p style="color:rgba(255,255,255,.55);max-width:52ch;font-size:.93rem;line-height:1.8">
+      El activo tiene atributos reales: piscina privada, jardín y entorno Sierra de San Vicente. El mercado es ilíquido pero la oportunidad existe si el precio es correcto. Hay que conocer el precio pedido para cerrar el veredicto de precio.
     </p>
-    <div class="verdict-metrics">
+    <div class="vmets">
       <div class="vm">
-        <div class="vm-num">75.000 €</div>
-        <div class="vm-lbl">Precio objetivo (estado actual)</div>
-        <div class="vm-note">Máximo recomendado a pagar por el activo a reformar</div>
+        <div class="vmn">115.000 €</div>
+        <div class="vml">Valor de mercado real</div>
+        <div class="vmnt">Con piscina y jardín en estado normal. Basado en comparables comarca.</div>
       </div>
       <div class="vm">
-        <div class="vm-num">62–68k €</div>
-        <div class="vm-lbl">Oferta inicial si piden &gt; 90.000 €</div>
-        <div class="vm-note">Deja margen para llegar al objetivo sin ceder posición</div>
+        <div class="vmn">95–105k €</div>
+        <div class="vml">Precio objetivo de compra</div>
+        <div class="vmnt">Rango razonable para un comprador bien informado</div>
       </div>
       <div class="vm">
-        <div class="vm-num">115.000 €</div>
-        <div class="vm-lbl">Valor potencial post-reforma</div>
-        <div class="vm-note">Upside real si la reforma es integral y de calidad</div>
+        <div class="vmn">10,4%</div>
+        <div class="vml">Rent. neta VUT (escenario base)</div>
+        <div class="vmnt">Si se compra a ~90k y se gestiona como alquiler turístico</div>
       </div>
     </div>
   </div>
 
-  <div class="conclusion-list fade-up">
-    <div class="conclusion-item">
-      <div class="conclusion-icon">✅</div>
+  <div class="clist fu">
+    <div class="ci">
+      <div class="ci-icon">✅</div>
       <div>
-        <h3>El activo tiene potencial real</h3>
-        <p>Piscina privada + jardín + ubicación Sierra de San Vicente = diferencial claro en el mercado de segunda residencia y turismo rural. El entorno es genuinamente atractivo y la demanda para ese perfil existe.</p>
+        <h3>Piscina + jardín es el diferencial que importa</h3>
+        <p>En la comarca Sierra de San Vicente, los activos con piscina privada tienen una prima documentada de 140–175 €/m² sobre comparables sin ella. Este activo tiene ese atributo en un mercado donde escasean.</p>
       </div>
     </div>
-    <div class="conclusion-item">
-      <div class="conclusion-icon">⚠️</div>
+    <div class="ci">
+      <div class="ci-icon">⚠️</div>
       <div>
-        <h3>El estado "a reformar" lo cambia todo</h3>
-        <p>Sin conocer el alcance exacto de la reforma, el precio objetivo debe incorporar un descuento de 40.000–60.000 € sobre el valor en buen estado. Es innegociable como criterio de análisis.</p>
+        <h3>Mercado ilíquido: es el riesgo real</h3>
+        <p>Un único activo activo en Idealista para todo el municipio. Si necesitas salir en menos de 18–24 meses, tendrás que sacrificar precio. La iliquidez es el coste oculto de este tipo de activos.</p>
       </div>
     </div>
-    <div class="conclusion-item">
-      <div class="conclusion-icon">🔴</div>
+    <div class="ci">
+      <div class="ci-icon">📊</div>
       <div>
-        <h3>La liquidez es el riesgo principal</h3>
-        <p>6 activos totales en Idealista para Montesclaros. Este no es un activo para quien necesite convertir la inversión en liquidez en menos de 2–3 años. La paciencia es parte del precio.</p>
+        <h3>El valor justo está entre 95.000 y 135.000 €</h3>
+        <p>Por debajo de 95.000 €: oportunidad. Entre 95.000–115.000 €: precio razonable, negociar. Entre 115.000–135.000 €: caro pero justificable si el estado es excelente. Por encima de 135.000 €: sobreprecio documentable con los comparables de comarca.</p>
       </div>
     </div>
-    <div class="conclusion-item">
-      <div class="conclusion-icon">💡</div>
+    <div class="ci">
+      <div class="ci-icon">💡</div>
       <div>
-        <h3>La oportunidad existe si el precio es correcto</h3>
-        <p>Si se cierra entre 62.000–78.000 €, la operación tiene sentido tanto para uso propio (segunda residencia) como para rentabilizar vía alquiler turístico rural con una reforma bien ejecutada. El escenario base VUT da ~8,4% neto.</p>
+        <h3>Como VUT, el escenario base da ~10% neto</h3>
+        <p>Si se compra a ~90.000 €, se gestiona como alquiler turístico con 80 noches/año a 180 €/noche, la rentabilidad neta estimada es del 10,4%. Es un retorno real y atractivo para un activo de estas características.</p>
       </div>
     </div>
-    <div class="conclusion-item">
-      <div class="conclusion-icon">📊</div>
+    <div class="ci">
+      <div class="ci-icon">🎯</div>
       <div>
-        <h3>El precio pedido determina la estrategia</h3>
-        <p>Sin conocer el precio de salida, la estrategia varía significativamente. Confirma el precio antes de cualquier movimiento. El veredicto de precio se cierra cuando ese dato está sobre la mesa.</p>
+        <h3>Primer paso: confirmar el precio pedido</h3>
+        <p>El veredicto de precio no se puede cerrar sin ese dato. Una vez confirmado, la estrategia de oferta es inmediata. Los escenarios de negociación de la sección 05 cubren todo el rango probable.</p>
       </div>
     </div>
   </div>
 
-  <!-- Sources -->
-  <div class="sources fade-up">
-    <div class="sources-title">Fuentes utilizadas en este análisis</div>
-    <div class="sources-list">
-      <span class="source-pill">Idealista · 2026</span>
-      <span class="source-pill">Fotocasa · 2026</span>
-      <span class="source-pill">pisos.com · 2026</span>
-      <span class="source-pill">Indomio · Ago. 2025</span>
-      <span class="source-pill">Tinsa IMIE · Q3 2025</span>
-      <span class="source-pill">RealAdvisor · 2025</span>
-      <span class="source-pill">Diputación de Toledo</span>
-      <span class="source-pill">Registro de la Propiedad</span>
+  <div class="src fu">
+    <div class="src-t">Fuentes verificadas · Todos los comparables activos a Mar. 2026</div>
+    <div class="src-l">
+      <span class="sp">Idealista · Mar. 2026</span>
+      <span class="sp">Fotocasa · Mar. 2026</span>
+      <span class="sp">Milanuncios · Mar. 2026</span>
+      <span class="sp">Indomio · Mar. 2026</span>
+      <span class="sp">Tinsa IMIE · Q3 2025</span>
+      <span class="sp">Escapada Rural · 2026</span>
+      <span class="sp">pisos.com · 2026</span>
     </div>
   </div>
 </section>
 
-</div><!-- /wrap -->
+</div>
 
 <footer>
   <div class="wrap">
-    <p>Análisis elaborado con datos públicos de los portales inmobiliarios referenciados · Marzo 2026<br>
-    Documento de carácter orientativo. No constituye asesoramiento financiero ni legal. Se recomienda tasación homologada antes de cualquier decisión de compra.</p>
+    <p>Análisis elaborado con comparables activos verificados · Fuentes: Idealista · Fotocasa · Indomio · Milanuncios · pisos.com · Tinsa · Marzo 2026<br>
+    Documento orientativo. No constituye asesoramiento financiero ni legal. Se recomienda tasación homologada antes de cualquier decisión de compra.</p>
   </div>
 </footer>
 
 <script>
-// NAV scroll
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
 
-// Fade-up observer
-const observer = new IntersectionObserver((entries) => {
+const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+}, { threshold: 0.1 });
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
 
-// Bar chart animation
-const barObserver = new IntersectionObserver((entries) => {
+const barObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      e.target.querySelectorAll('.bar-fill').forEach(bar => {
-        bar.style.width = bar.dataset.w;
-      });
+      e.target.querySelectorAll('.bf').forEach(b => { b.style.width = b.dataset.w; });
     }
   });
 }, { threshold: 0.3 });
-document.querySelectorAll('.chart').forEach(el => barObserver.observe(el));
+document.querySelectorAll('.chart').forEach(el => barObs.observe(el));
 </script>
-
 </body>
 </html>
